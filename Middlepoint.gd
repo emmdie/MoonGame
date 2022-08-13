@@ -3,10 +3,13 @@ extends Node2D
 var gear = 0
 var targetSpeed = 0
 var currentSpeed =0
+var waggons = []
 
 func _process(delta):
 	if(currentSpeed<targetSpeed):
-		currentSpeed += targetSpeed*0.6*delta
+		currentSpeed += targetSpeed*0.3*delta
+	if(currentSpeed>targetSpeed):
+		currentSpeed -= targetSpeed*0.3*delta
 	$Sprite/Pivot.rotation += currentSpeed * delta
 
 
@@ -18,4 +21,5 @@ func _ready():
 func changeGear(amount):
 	if!((gear == -2) && (amount == -1 )||(gear ==2)&&(amount ==1)):
 		gear += amount
-		targetSpeed += amount
+		targetSpeed += amount*0.7
+
