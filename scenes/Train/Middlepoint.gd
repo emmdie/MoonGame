@@ -22,6 +22,6 @@ func changeGear(amount):
 	if!((gear == -2) && (amount == -1 )||(gear ==2)&&(amount ==1)):
 		gear += amount
 		targetSpeed += amount*0.7
-
-func appendWaggon(waggon):
-	
+		
+func appendCar(car):
+	waggons ++ car
