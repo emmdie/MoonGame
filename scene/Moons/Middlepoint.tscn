@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Middlepoint.gd" type="Script" id=2]
+[ext_resource path="res://temporaryAssets/art/moonPlaceholder.png" type="Texture" id=3]
+
+[node name="Middlepoint" type="Node2D"]
+position = Vector2( 160, 89 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3, 1.00003 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Pivot" type="Node2D" parent="Sprite"]
+position = Vector2( 15, -0.000152588 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite/Pivot"]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+offset = Vector2( 300, 0 )
