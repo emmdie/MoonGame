@@ -6,7 +6,7 @@ extends Area2D
 # var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scewne tree for the first time.
 func _ready():
 	gravity_vec.x = $CenterOfGravity.position.x
 	gravity_vec.y = $CenterOfGravity.position.y

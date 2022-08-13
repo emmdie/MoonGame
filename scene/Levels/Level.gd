@@ -1,20 +1,21 @@
-extends RigidBody2D
+extends Node
 
+export(PackedScene) var mouse_scene
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-signal moon_hit
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	randomize()
 
+func new_game():
+	
+
+func game_over():
+	$MouseTimer.stop
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Moon_body_entered(body):
-	if (body.get_name().matchn("*Mouse*")):
-		emit_signal("moon_hit")
