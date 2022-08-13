@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GravityField.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 524.5, 319 )
+
+[node name="GravityField" type="Area2D"]
+space_override = 3
+gravity_point = true
+gravity_vec = Vector2( 8, 1 )
+script = ExtResource( 1 )
+
+[node name="AreaOfEffect" type="CollisionShape2D" parent="."]
+position = Vector2( 503.5, 285 )
+shape = SubResource( 1 )
+
+[node name="CenterOfGravity" type="Position2D" parent="."]
+position = Vector2( 505, 286 )
