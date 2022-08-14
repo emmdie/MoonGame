@@ -9,7 +9,11 @@ extents = Vector2( 3389.5, 3124.5 )
 [node name="GravityField" type="Area2D"]
 space_override = 3
 gravity_point = true
-gravity = 100.0
+
+gravity_distance_scale = 500.0
+gravity_vec = Vector2( 8, 1 )
+gravity = 1000.0
+linear_damp = 0.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 3799.0, -2178.0 ],
