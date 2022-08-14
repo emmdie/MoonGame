@@ -19,7 +19,7 @@ __meta__ = {
 mouse_scene = ExtResource( 3 )
 
 [node name="GravityField" parent="." instance=ExtResource( 2 )]
-position = Vector2( 789, 487 )
+position = Vector2( 294, -65 )
 
 [node name="Moon" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1280, 800 )
@@ -29,5 +29,9 @@ curve = SubResource( 1 )
 
 [node name="MouseSpawnLocation" type="PathFollow2D" parent="MousePath"]
 position = Vector2( -1774, -2191 )
+rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="MouseTimer" to="." method="_on_MouseTimer_timeout2"]
+[connection signal="timeout" from="MouseTimer" to="." method="_on_MouseTimer_timeout"]
