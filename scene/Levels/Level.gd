@@ -37,7 +37,7 @@ func _on_MouseTimer_timeout():
 	
 	mouse.position = mouse_spawn_location.position
 	
-	var velovity = Vector2(20.0, 0.0)
+	var velovity = Vector2(0.0, 0.0)
 	mouse.linear_velocity = velovity.rotated(mouse.rotation)
 	
 	add_child(mouse)

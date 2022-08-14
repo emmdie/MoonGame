@@ -8,8 +8,10 @@ extents = Vector2( 3195, 3124.5 )
 [node name="GravityField" type="Area2D"]
 space_override = 3
 gravity_point = true
+gravity_distance_scale = 500.0
 gravity_vec = Vector2( 8, 1 )
-gravity = 100.0
+gravity = 1000.0
+linear_damp = 0.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
