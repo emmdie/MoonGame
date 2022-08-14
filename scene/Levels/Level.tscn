@@ -19,7 +19,6 @@ __meta__ = {
 mouse_scene = ExtResource( 3 )
 
 [node name="GravityField" parent="." instance=ExtResource( 2 )]
-position = Vector2( 294, -65 )
 
 [node name="Moon" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1280, 800 )
