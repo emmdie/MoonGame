@@ -11,12 +11,15 @@ config_version=4
 [application]
 
 config/name="MoonExpress"
+run/main_scene="res://scene/Levels/Level.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=2560
 window/size/height=1600
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [physics]
 

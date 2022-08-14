@@ -9,6 +9,7 @@ extents = Vector2( 3195, 3124.5 )
 space_override = 3
 gravity_point = true
 gravity_vec = Vector2( 8, 1 )
+gravity = 100.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
