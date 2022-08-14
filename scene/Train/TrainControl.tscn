@@ -4,7 +4,6 @@
 [ext_resource path="res://scene/Train/locomotive.tscn" type="PackedScene" id=2]
 
 [node name="TrainControl" type="Node2D"]
-position = Vector2( 300, 300 )
 script = ExtResource( 1 )
 
 [node name="RotationalCenter" type="Node2D" parent="."]

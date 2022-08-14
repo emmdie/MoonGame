@@ -1,27 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scene/environment/GravityField.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3195, 3124.5 )
+extents = Vector2( 3389.5, 3124.5 )
 
 [node name="GravityField" type="Area2D"]
 space_override = 3
 gravity_point = true
+
 gravity_distance_scale = 500.0
 gravity_vec = Vector2( 8, 1 )
 gravity = 1000.0
 linear_damp = 0.0
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_horizontal_guides_": [ 3799.0, -2178.0 ],
 "_edit_vertical_guides_": [ -1783.0, 3790.0 ]
 }
 
 [node name="AreaOfEffect" type="CollisionShape2D" parent="."]
-position = Vector2( 982, 886.5 )
+position = Vector2( 1486.5, 800 )
 shape = SubResource( 1 )
 
-[node name="CenterOfGravity" type="Position2D" parent="."]
-position = Vector2( 1280, 800 )
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )

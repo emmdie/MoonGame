@@ -10,7 +10,9 @@ export(PackedScene) var mouse_scene
 func _ready():
 	new_game()
 	randomize()
-
+	$GravityField.set_gravity_center($Moon.position)
+	
+	
 #starts a level
 func new_game():
 	$MouseTimer.start()
