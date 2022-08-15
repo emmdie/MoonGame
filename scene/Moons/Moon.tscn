@@ -4,7 +4,7 @@
 [ext_resource path="res://scene/Moons/Moon.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 150.748
+radius = 314.229
 
 [node name="Moon" type="RigidBody2D"]
 mode = 1
@@ -13,10 +13,8 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="TrainStartLocation" type="Position2D" parent="."]
-position = Vector2( 0, -167 )
-
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Moon_body_entered"]
