@@ -35,12 +35,12 @@ func _on_MouseTimer_timeout():
 	var mouse_spawn_location = get_node("MousePath/MouseSpawnLocation")
 	mouse_spawn_location.offset = randi()
 	
-	mouse.global_rotation = ($Moon.position - mouse.position).angle()
-	
 	mouse.position = mouse_spawn_location.position
 	
-	var velovity = Vector2(0.0, 0.0)
-	mouse.linear_velocity = velovity.rotated(mouse.rotation)
+	mouse.rotation = ($Moon.position - mouse.position).rotated(deg2rad(90)).angle()
+	
+	var velocity = Vector2(0.0, 0.0)
+	mouse.linear_velocity = velocity.rotated(mouse.rotation)
 	
 	add_child(mouse)
 	print("added mouse to scene")
