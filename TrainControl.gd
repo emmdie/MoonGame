@@ -6,12 +6,8 @@ var currentSpeed =0
 var waggons = []
 
 func _process(delta):
-	if(currentSpeed<targetSpeed):
-		currentSpeed += targetSpeed*0.3*delta
-	if(currentSpeed>targetSpeed):
-		currentSpeed -= targetSpeed*0.3*delta
+	updateCurrentSpeed(delta)
 	$RotationalCenter.rotation += currentSpeed * delta
-
 
 func _ready():
 	changeGear(1)
@@ -22,6 +18,9 @@ func changeGear(amount):
 	if!((gear == -2) && (amount == -1 )||(gear ==2)&&(amount ==1)):
 		gear += amount
 		targetSpeed += amount*0.7
-		
-func appendCar(car):
-	waggons ++ car
+
+func updateCurrentSpeed(delta):
+	if(currentSpeed<targetSpeed):
+		currentSpeed += targetSpeed*0.3*delta
+	if(currentSpeed>targetSpeed):
+		currentSpeed -= targetSpeed*0.3*delta

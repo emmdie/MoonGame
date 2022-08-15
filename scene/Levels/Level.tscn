@@ -25,7 +25,6 @@ mouse_scene = ExtResource( 3 )
 position = Vector2( 1280, 800 )
 
 [node name="TrainControl" parent="Moon" instance=ExtResource( 5 )]
-position = Vector2( 0, 0 )
 
 [node name="MousePath" type="Path2D" parent="."]
 curve = SubResource( 1 )
