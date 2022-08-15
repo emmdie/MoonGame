@@ -17,7 +17,7 @@ func _ready():
 func changeGear(amount):
 	if!((gear == -2) && (amount == -1 )||(gear ==2)&&(amount ==1)):
 		gear += amount
-		targetSpeed += amount*0.7
+		targetSpeed += amount*0.5
 
 func updateCurrentSpeed(delta):
 	if(currentSpeed<targetSpeed):
