@@ -10,7 +10,7 @@ script = ExtResource( 1 )
 [node name="RotationalCenter" type="Node2D" parent="."]
 
 [node name="locomotive" parent="RotationalCenter" instance=ExtResource( 2 )]
-position = Vector2( 0, -400 )
+position = Vector2( 0, -460 )
 
 [node name="TrainCart" parent="RotationalCenter" instance=ExtResource( 3 )]
 position = Vector2( 0, -400 )
