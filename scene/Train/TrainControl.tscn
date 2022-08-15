@@ -13,4 +13,5 @@ script = ExtResource( 1 )
 position = Vector2( 0, -355 )
 
 [node name="TrainCart" parent="RotationalCenter" instance=ExtResource( 3 )]
-position = Vector2( 0, -400 )
+position = Vector2( -140, -350 )
+rotation = 5.84685
