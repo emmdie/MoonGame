@@ -35,7 +35,7 @@ func _on_MouseTimer_timeout():
 	var mouse_spawn_location = get_node("MousePath/MouseSpawnLocation")
 	mouse_spawn_location.offset = randi()
 	
-	mouse.look_at($Moon.position)
+	mouse.global_rotation = ($Moon.position - mouse.position).angle()
 	
 	mouse.position = mouse_spawn_location.position
 	
