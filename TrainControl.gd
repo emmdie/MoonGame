@@ -10,6 +10,7 @@ func _process(delta):
 	$RotationalCenter.rotation += currentSpeed * delta
 
 func _ready():
+	$RotationalCenter/TrainCart1.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
 	changeGear(1)
 	changeGear(1)
 
