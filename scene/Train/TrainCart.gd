@@ -12,6 +12,10 @@ func setTurret(turretType):
 	add_child(turret)
 	turret.position.y = -40
 	
+func setEnabled(boolean):
+	$AnimatedSprite.visible = boolean
+	$CollisionShape2D.disabled = !true
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
