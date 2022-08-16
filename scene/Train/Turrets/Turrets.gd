@@ -14,5 +14,5 @@ func turn():
 
 func shoot():
 	var b = Bullet.instance()
-	owner.add_child(b)
+	add_child(b)
 	b.transform = get_node("Barrel").transform
