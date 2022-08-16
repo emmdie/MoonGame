@@ -6,6 +6,11 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 314.229
 
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 319.002
+
+
 [node name="Moon" type="RigidBody2D"]
 mode = 1
 script = ExtResource( 2 )
@@ -17,4 +22,11 @@ shape = SubResource( 1 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 
-[connection signal="body_entered" from="." to="." method="_on_Moon_body_entered"]
+
+[node name="MouseDetectionRange" type="Area2D" parent="."]
+
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetectionRange"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="MouseDetectionRange" to="." method="_on_MouseDetectionRange_body_entered"]

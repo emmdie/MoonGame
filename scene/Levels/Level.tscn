@@ -35,5 +35,5 @@ rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]
 
-[connection signal="timeout" from="MouseTimer" to="." method="_on_MouseTimer_timeout"]
-[connection signal="timeout" from="MouseTimer" to="." method="_on_MouseTimer_timeout2"]
+
+[connection signal="mouse_hit" from="Moon" to="." method="_on_Moon_mouse_hit"]

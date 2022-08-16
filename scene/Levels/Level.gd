@@ -1,5 +1,7 @@
 extends Node
 
+var health = 100
+
 export(PackedScene) var mouse_scene
 # Declare member variables here. Examples:
 # var a = 2
@@ -20,7 +22,7 @@ func new_game():
 
 #this is called when the player loses in a level
 func game_over():
-	$MouseTimer.stop
+	$MouseTimer.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -48,3 +50,10 @@ func _on_MouseTimer_timeout():
 
 
 
+
+
+func _on_Moon_mouse_hit():
+	if health <= 0:
+		game_over()
+	health -= 10
+	print(str(health))

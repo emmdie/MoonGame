@@ -15,7 +15,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Mouse" type="RigidBody2D"]
+[node name="Mouse" type="RigidBody2D" groups=["mouse"]]
 collision_mask = 0
 script = ExtResource( 1 )
 
@@ -24,3 +24,5 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_Mouse_body_entered"]
