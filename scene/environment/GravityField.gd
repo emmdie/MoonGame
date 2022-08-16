@@ -8,9 +8,11 @@ extends Area2D
 
 # Called when the node enters the scewne tree for the first time.
 func _ready():
-	gravity_vec.x = $CenterOfGravity.position.x
-	gravity_vec.y = $CenterOfGravity.position.y
+	pass
 
+func set_gravity_center(pos):
+	gravity_vec.x = pos.x
+	gravity_vec.y = pos.y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

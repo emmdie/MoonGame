@@ -1,5 +1,7 @@
 extends Node
 
+var health = 100
+
 export(PackedScene) var mouse_scene
 # Declare member variables here. Examples:
 # var a = 2
@@ -10,7 +12,9 @@ export(PackedScene) var mouse_scene
 func _ready():
 	new_game()
 	randomize()
-
+	$GravityField.set_gravity_center($Moon.position)
+	
+	
 #starts a level
 func new_game():
 	$MouseTimer.start()
@@ -18,7 +22,7 @@ func new_game():
 
 #this is called when the player loses in a level
 func game_over():
-	$MouseTimer.stop
+	$MouseTimer.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -33,12 +37,12 @@ func _on_MouseTimer_timeout():
 	var mouse_spawn_location = get_node("MousePath/MouseSpawnLocation")
 	mouse_spawn_location.offset = randi()
 	
-	mouse.look_at($Moon.position)
-	
 	mouse.position = mouse_spawn_location.position
 	
-	var velovity = Vector2(0.0, 0.0)
-	mouse.linear_velocity = velovity.rotated(mouse.rotation)
+	mouse.rotation = ($Moon.position - mouse.position).rotated(deg2rad(90)).angle()
+	
+	var velocity = Vector2(0.0, 0.0)
+	mouse.linear_velocity = velocity.rotated(mouse.rotation)
 	
 	add_child(mouse)
 	print("added mouse to scene")
@@ -46,3 +50,10 @@ func _on_MouseTimer_timeout():
 
 
 
+
+
+func _on_Moon_mouse_hit():
+	if health <= 0:
+		game_over()
+	health -= 10
+	print(str(health))
