@@ -15,7 +15,7 @@ _data = {
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -2202.0, 3801.0 ],
-"_edit_vertical_guides_": [ -1768.0, 4281.0 ]
+"_edit_vertical_guides_": [ -1768.0, 4292.0 ]
 }
 mouse_scene = ExtResource( 3 )
 
@@ -27,6 +27,8 @@ position = Vector2( 1280, 800 )
 [node name="TrainControl" parent="Moon" instance=ExtResource( 5 )]
 
 [node name="MousePath" type="Path2D" parent="."]
+position = Vector2( 420.664, 271.189 )
+scale = Vector2( 0.651445, 0.641346 )
 curve = SubResource( 1 )
 
 [node name="MouseSpawnLocation" type="PathFollow2D" parent="MousePath"]
@@ -35,5 +37,5 @@ rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]
 
-
 [connection signal="mouse_hit" from="Moon" to="." method="_on_Moon_mouse_hit"]
+[connection signal="timeout" from="MouseTimer" to="." method="_on_MouseTimer_timeout"]

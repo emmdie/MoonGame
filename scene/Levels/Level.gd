@@ -23,6 +23,8 @@ func new_game():
 #this is called when the player loses in a level
 func game_over():
 	$MouseTimer.stop()
+	get_tree().call_group("mice", "queue_free")
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

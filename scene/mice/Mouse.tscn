@@ -15,7 +15,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Mouse" type="RigidBody2D" groups=["mouse"]]
+[node name="Mouse" type="RigidBody2D" groups=["mice"]]
 collision_mask = 0
 script = ExtResource( 1 )
 
