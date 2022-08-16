@@ -1,13 +1,16 @@
 extends Node2D
 	
 var gear = 0
-var targetSpeed = 0
-var currentSpeed =0
+var currentSpeed = 0
 onready var cart1 = $RotationalCenter/TrainCart1; onready var cart2 = $RotationalCenter/TrainCart2; onready var cart3 = $RotationalCenter/TrainCart3; onready var cart4 = $RotationalCenter/TrainCart4; onready var cart5 = $RotationalCenter/TrainCart5;  
 
 func _process(delta):
-	updateCurrentSpeed(delta)
+	currentSpeed = updateCurrentSpeed(delta)
 	$RotationalCenter.rotation += currentSpeed * delta
+	if (Input.is_action_just_pressed("speed_up")):
+		gearUp()
+	if(Input.is_action_just_pressed("speed_down")):
+		gearDown()
 
 func _ready():
 	cart2.setEnabled(false)
@@ -15,18 +18,25 @@ func _ready():
 	cart4.setEnabled(false)
 	cart5.setEnabled(false)
 	cart1.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
-	changeGear(1)
-	changeGear(1)
+
 
 #takes -1 or 1 as parameter
-func changeGear(amount):
-	if!((gear == -2) && (amount == -1 )||(gear ==2)&&(amount ==1)):
-		gear += amount
-		targetSpeed += amount*0.5
-
+func gearDown():
+	if(!(gear==-3)):
+		gear = gear -1
+		print(str(gear)+" gear down")
+func gearUp():
+	if(!(gear==3)):
+		gear=gear+1
+	print(str(gear) + " gear up")
+	
+		
 func updateCurrentSpeed(delta):
-	if(currentSpeed<targetSpeed):
-		currentSpeed += targetSpeed*0.3*delta
-	if(currentSpeed>targetSpeed):
-		currentSpeed -= targetSpeed*0.3*delta
+	var targetSpeed = gear*0.25
+	if(targetSpeed == currentSpeed):
+		return currentSpeed
+	if(targetSpeed > currentSpeed):
+		return (currentSpeed + 2*(targetSpeed-currentSpeed)*delta)
+	else:
+		return (currentSpeed-2*delta*(currentSpeed-targetSpeed))
 

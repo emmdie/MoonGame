@@ -19,19 +19,15 @@ rotation = 5.93412
 [node name="TrainCart2" parent="RotationalCenter" instance=ExtResource( 3 )]
 position = Vector2( -245, -280 )
 rotation = -0.69813
-scale = Vector2( 1, 1 )
 
 [node name="TrainCart3" parent="RotationalCenter" instance=ExtResource( 3 )]
 position = Vector2( -325, -175 )
 rotation = -1.13446
-scale = Vector2( 1, 1 )
 
 [node name="TrainCart4" parent="RotationalCenter" instance=ExtResource( 3 )]
 position = Vector2( -360, -50 )
 rotation = -1.43117
-scale = Vector2( 1, 1 )
 
 [node name="TrainCart5" parent="RotationalCenter" instance=ExtResource( 3 )]
 position = Vector2( -360, 80 )
 rotation = -1.79769
-scale = Vector2( 1, 1 )
