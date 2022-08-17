@@ -18,7 +18,7 @@ func turn():
 
 func shoot():
 	var b = Bullet.instance()
-	Bullet.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
+	b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
 	add_child(b)
 	b.transform = get_node("Barrel").transform
 
