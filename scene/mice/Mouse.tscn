@@ -24,5 +24,3 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-
-[connection signal="body_entered" from="." to="." method="_on_Mouse_body_entered"]
