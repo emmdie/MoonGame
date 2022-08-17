@@ -2,7 +2,8 @@ extends Node2D
 	
 var gear = 0
 var currentSpeed = 0
-onready var cart1 = $RotationalCenter/TrainCart1; onready var cart2 = $RotationalCenter/TrainCart2; onready var cart3 = $RotationalCenter/TrainCart3; onready var cart4 = $RotationalCenter/TrainCart4; onready var cart5 = $RotationalCenter/TrainCart5;  
+onready var cart1 = $RotationalCenter/TrainCart1; onready var cart2 = $RotationalCenter/TrainCart2; onready var cart3 = $RotationalCenter/TrainCart3; onready var cart4 = $RotationalCenter/TrainCart4; onready var cart5 = $RotationalCenter/TrainCart5; 
+signal gearChanged(gear) 
 
 func _process(delta):
 	currentSpeed = updateCurrentSpeed(delta)
@@ -24,11 +25,11 @@ func _ready():
 func gearDown():
 	if(!(gear==-3)):
 		gear = gear -1
-		print(str(gear)+" gear down")
+		emit_signal("gearChanged", gear)
 func gearUp():
 	if(!(gear==3)):
 		gear=gear+1
-	print(str(gear) + " gear up")
+	emit_signal("gearChanged", gear)
 	
 		
 func updateCurrentSpeed(delta):
