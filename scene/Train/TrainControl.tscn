@@ -31,3 +31,9 @@ rotation = -1.43117
 [node name="TrainCart5" parent="RotationalCenter" instance=ExtResource( 3 )]
 position = Vector2( -360, 80 )
 rotation = -1.79769
+
+[connection signal="weapon_hit_mouse" from="RotationalCenter/TrainCart1" to="." method="_on_TrainCart_weapon_hit_mouse"]
+[connection signal="weapon_hit_mouse" from="RotationalCenter/TrainCart2" to="." method="_on_TrainCart_weapon_hit_mouse"]
+[connection signal="weapon_hit_mouse" from="RotationalCenter/TrainCart3" to="." method="_on_TrainCart_weapon_hit_mouse"]
+[connection signal="weapon_hit_mouse" from="RotationalCenter/TrainCart4" to="." method="_on_TrainCart_weapon_hit_mouse"]
+[connection signal="weapon_hit_mouse" from="RotationalCenter/TrainCart5" to="." method="_on_TrainCart_weapon_hit_mouse"]

@@ -4,9 +4,6 @@ var health
 var score 
 
 export(PackedScene) var mouse_scene
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,9 +26,6 @@ func game_over():
 	get_tree().call_group("mice", "queue_free")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_MouseTimer_timeout():
@@ -52,12 +46,13 @@ func _on_MouseTimer_timeout():
 	add_child(mouse)
 
 
-func _on_Level_mouse_killed():
-	score += 1
-	print("Score " + str(score))
-
 func _on_Moon_mouse_hit():
 	if health <= 0:
 		game_over()
 	health -= 10
 	print("HP " + str(health))
+
+
+func _on_TrainControl_TrainCart_weapon_shot_mouse():
+	score += 1
+	print("Score " + str(score))
