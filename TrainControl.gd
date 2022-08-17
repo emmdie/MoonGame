@@ -1,5 +1,7 @@
 extends Node2D
-	
+
+signal TrainCart_weapon_shot_mouse
+
 var gear = 0
 var currentSpeed = 0
 onready var cart1 = $RotationalCenter/TrainCart1; onready var cart2 = $RotationalCenter/TrainCart2; onready var cart3 = $RotationalCenter/TrainCart3; onready var cart4 = $RotationalCenter/TrainCart4; onready var cart5 = $RotationalCenter/TrainCart5;  
@@ -40,3 +42,10 @@ func updateCurrentSpeed(delta):
 	else:
 		return (currentSpeed-2*delta*(currentSpeed-targetSpeed))
 
+
+
+
+
+
+func _on_TrainCart_weapon_hit_mouse():
+	emit_signal("TrainCart_weapon_shot_mouse")
