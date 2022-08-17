@@ -8,7 +8,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1774, -2191, 0, 0, 0, 0, 4295, -2191, 0, 0, 0, 0, 4276, 3803, 0, 0, 0, 0, -1755, 3812, 0, 0, 0, 0, -1774, -2191 )
+"points": PoolVector2Array( 0, 0, 0, 0, -553, -767, 0, 0, 0, 0, 3210, -786, 0, 0, 0, 0, 3180, 2137, 0, 0, 0, 0, -545, 2147, 0, 0, 0, 0, -553, -767 )
 }
 
 [node name="Level" type="Node"]
@@ -27,12 +27,10 @@ position = Vector2( 1280, 800 )
 [node name="TrainControl" parent="Moon" instance=ExtResource( 5 )]
 
 [node name="MousePath" type="Path2D" parent="."]
-position = Vector2( 420.664, 271.189 )
-scale = Vector2( 0.651445, 0.641346 )
 curve = SubResource( 1 )
 
 [node name="MouseSpawnLocation" type="PathFollow2D" parent="MousePath"]
-position = Vector2( -1774, -2191 )
+position = Vector2( -553, -767 )
 rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]

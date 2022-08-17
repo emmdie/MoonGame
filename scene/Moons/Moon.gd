@@ -15,9 +15,7 @@ func _ready():
 
 
 func _on_MouseDetectionRange_body_entered(body):
-	print("moon entered")
 	if (body.get_name().matchn("*Mouse*")):
-		print("moon entered by mouse")
 		emit_signal("mouse_hit")
 		body.queue_free()
 
