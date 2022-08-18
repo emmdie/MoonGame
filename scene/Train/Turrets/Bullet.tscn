@@ -7,6 +7,7 @@
 extents = Vector2( 7, 7 )
 
 [node name="Bullet" type="Area2D"]
+z_index = -1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
