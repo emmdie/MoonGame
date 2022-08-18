@@ -8,9 +8,9 @@
 [ext_resource path="res://scene/UI/Lever.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/font/SpaceCowboy-6RXg.ttf" type="DynamicFontData" id=7]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -553, -767, 0, 0, 0, 0, 3210, -786, 0, 0, 0, 0, 3180, 2137, 0, 0, 0, 0, -545, 2147, 0, 0, 0, 0, -553, -767 )
+"points": PoolVector2Array( 0, 0, 0, 0, 234, 324, 0, 0, 0, 0, 313, 149, 0, 0, 0, 0, 432, 18, 0, 0, 0, 0, 641, -83, 0, 0, 0, 0, 805, -134, 0, 0, 0, 0, 992, -202, 0, 0, 0, 0, 1190, -213, 0, 0, 0, 0, 1428, -213, 0, 0, 0, 0, 1699, -163, 0, 0, 0, 0, 1931, -95, 0, 0, 0, 0, 2135, -10, 0, 0, 0, 0, 2231, 64, 0, 0, 0, 0, 2350, 183, 0, 0, 0, 0, 2452, 397, 0, 0, 0, 0, 2491, 550, 0, 0, 0, 0, 2491, 737, 0, 0, 0, 0, 2491, 952, 0, 0, 0, 0, 2406, 1172, 0, 0, 0, 0, 2333, 1342, 0, 0, 0, 0, 2265, 1495, 0, 0, 0, 0, 2157, 1636, 0, 0, 0, 0, 1965, 1693, 0, 0, 0, 0, 1693, 1800, 0, 0, 0, 0, 1439, 1817, 0, 0, 0, 0, 1201, 1795, 0, 0, 0, 0, 998, 1749, 0, 0, 0, 0, 811, 1670, 0, 0, 0, 0, 613, 1602, 0, 0, 0, 0, 415, 1455, 0, 0, 0, 0, 353, 1252, 0, 0, 0, 0, 274, 929, 0, 0, 0, 0, 274, 782, 0, 0, 0, 0, 234, 324 )
 }
 
 [sub_resource type="DynamicFont" id=2]
@@ -33,7 +33,7 @@ position = Vector2( 1280, 800 )
 [node name="TrainControl" parent="Moon" instance=ExtResource( 5 )]
 
 [node name="MousePath" type="Path2D" parent="."]
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 
 [node name="MouseSpawnLocation" type="PathFollow2D" parent="MousePath"]
 position = Vector2( -553, -767 )
