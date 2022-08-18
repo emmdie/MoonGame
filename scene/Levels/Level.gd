@@ -26,8 +26,6 @@ func game_over():
 	get_tree().call_group("mice", "queue_free")
 
 
-
-
 func _on_MouseTimer_timeout():
 	var mouse = mouse_scene.instance()
 	

@@ -9,7 +9,7 @@ func fireTurret():
 
 func setTurret(turretType):
 	if !(turret == null):
-		turret.que_free()
+		turret.queue_free()
 	turret = turretType.instance()
 	turret.connect("shot_mouse", self, "_on_turret_shot_mouse")
 	add_child(turret)
