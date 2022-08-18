@@ -1,22 +1,33 @@
-[gd_scene load_steps=8 format=2]
+
+[gd_scene load_steps=10 format=2]
+
 
 [ext_resource path="res://scene/Moons/Moon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/environment/GravityField.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/mice/Mouse.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/Levels/Level.gd" type="Script" id=4]
 [ext_resource path="res://scene/Train/TrainControl.tscn" type="PackedScene" id=5]
+
+
 [ext_resource path="res://scene/UI/Lever.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/font/SpaceCowboy-6RXg.ttf" type="DynamicFontData" id=7]
+
+
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -553, -767, 0, 0, 0, 0, 3210, -786, 0, 0, 0, 0, 3180, 2137, 0, 0, 0, 0, -545, 2147, 0, 0, 0, 0, -553, -767 )
 }
 
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 7 )
+
 [node name="Level" type="Node"]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -2202.0, 3801.0 ],
-"_edit_vertical_guides_": [ -1768.0, 4292.0 ]
+"_edit_verticalhttps://github.com/emmdie/MoonGame/pull/26/conflict?name=scene%252FLevels%252FLevel.tscn&ancestor_oid=758bccf50f3c9374a528d7fc965c22bcd2db7019&base_oid=dd76b9fc6dacd89677c758d642df86999311b300&head_oid=2c13847c9e6eed38e86d702ccb47597e7e987f3b_guides_": [ -1768.0, 4292.0 ]
 }
 mouse_scene = ExtResource( 3 )
 
@@ -36,6 +47,23 @@ rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 2304.0
+margin_top = 681.0
+margin_right = 2549.0
+margin_bottom = 794.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[connection signal="mouse_hit" from="Moon" to="." method="_on_Moon_mouse_hit"]
+[connection signal="TrainCart_weapon_shot_mouse" from="Moon/TrainControl" to="." method="_on_TrainControl_TrainCart_weapon_shot_mouse"]
+[connection signal="gearChanged" from="Moon/TrainControl" to="UI/SpeedLever" method="_on_TrainControl_gearChanged"]
+[connection signal="train_damaged" from="Moon/TrainControl" to="." method="_on_TrainControl_train_damaged"]
 
 [node name="UI" type="Node2D" parent="."]
 

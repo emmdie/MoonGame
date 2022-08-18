@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal weapon_hit_mouse
+signal cart_damaged
 
 export (PackedScene) var turret
 
@@ -12,11 +13,15 @@ func setTurret(turretType):
 		turret.queue_free()
 	turret = turretType.instance()
 	turret.connect("shot_mouse", self, "_on_turret_shot_mouse")
+	turret.connect("turret_damaged", self, "_on_turret_turret_damaged")
 	add_child(turret)
 	turret.position.y = -40
 
 func _on_turret_shot_mouse():
 	emit_signal("weapon_hit_mouse")
+
+func _on_turret_turret_damaged():
+	emit_signal("cart_damaged")
 
 func setEnabled(boolean):
 	$AnimatedSprite.visible = boolean
