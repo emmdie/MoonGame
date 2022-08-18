@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/art/Train/CartAnimation/frame0001.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33, 33 )
+extents = Vector2( 64.5, 33 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -20,6 +20,7 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.5, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

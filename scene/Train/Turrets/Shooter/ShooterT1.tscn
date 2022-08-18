@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/Train/Turrets/Shooter/ShooterT1.gd" type="Script" id=1]
 [ext_resource path="res://scene/Train/Turrets/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/art/Train/Turrets/Turretbarrel.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/Train/Turrets/turretbase.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 20.0
+height = 40.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,3 +24,10 @@ offset = Vector2( 60, 20 )
 
 [node name="Muzzle" type="Position2D" parent="Barrel"]
 position = Vector2( 150, 2 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitboxArea" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 0, 20 )
+rotation = 1.5708
+shape = SubResource( 1 )

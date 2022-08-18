@@ -1,6 +1,7 @@
 extends Node2D
 
 signal TrainCart_weapon_shot_mouse
+signal train_damaged
 
 var gear = 0
 var currentSpeed = 0
@@ -49,3 +50,6 @@ func updateCurrentSpeed(delta):
 
 func _on_TrainCart_weapon_hit_mouse():
 	emit_signal("TrainCart_weapon_shot_mouse")
+
+func _on_TrainCart_cart_damaged():
+	emit_signal("train_damaged")

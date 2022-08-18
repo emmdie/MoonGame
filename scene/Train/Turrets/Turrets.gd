@@ -1,8 +1,15 @@
 extends Node2D
 
 signal shot_mouse
+<<<<<<< Updated upstream
+=======
+signal turret_damaged
+
+>>>>>>> Stashed changes
 export (PackedScene) var Bullet
 
+func _ready():
+	$Hitbox.connect("body_entered", self, "_on_Hitbox_body_entered")
 
 func _physics_process(_delta):
 	turn()
@@ -31,3 +38,8 @@ func shoot():
 
 func _on_Bullet_hit_mouse():
 	emit_signal("shot_mouse")
+
+func _on_Hitbox_body_entered(body):
+	if body.get_name().matchn("*mouse*"):
+		emit_signal("turret_damaged")
+	
