@@ -6,9 +6,8 @@ var reloading = false
 func _ready():
 	reload(3)
 
-
 func _process(delta):
-	while (reloading ==true):
+	if (reloading ==true):
 		$ProgressBar.value = 100 * (1-($ReloadTimer.time_left /$ReloadTimer.wait_time+0.00001))
 	
 func updateLabel():
@@ -22,11 +21,8 @@ func reload(duration):
 	$ReloadTimer.start(duration)
 	$ProgressBar.visible = true
 
-	
-
 func _on_ReloadTimer_timeout():
 	$AmmoLabel.visible = true
 	$ProgressBar.visible = false
 	reloading = false
 	ammoCurrent = ammoMax
-

@@ -16,18 +16,11 @@ func turn():
 
 
 func shoot():
-	
 	var b = Bullet.instance()
-	
 	b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
-	
-	b.monitoring = false
 	b.transform = get_node("Barrel").transform
 	get_parent().get_parent().get_parent().add_child(b)
 	b.position = get_node("Barrel/Muzzle").position
-	
-	#b.monitoring = true
-	
 
 func _on_Bullet_hit_mouse():
 	emit_signal("shot_mouse")

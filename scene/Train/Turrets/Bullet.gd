@@ -2,10 +2,12 @@ extends Area2D
 
 signal hit_mouse
 
-var speed = 40
+var speedx = 100
+var speedy = 100
+
 
 func _physics_process(delta):
-	position += transform.x * speed * delta
+	Position2D
 
 func _ready():
 	pass
