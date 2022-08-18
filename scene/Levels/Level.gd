@@ -62,6 +62,7 @@ func update_score():
 
 
 func _on_TrainControl_train_damaged():
+	print(str(train_health))
 	if (train_health <= 0):
 		game_over()
 	train_health -= 10
