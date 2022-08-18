@@ -1,8 +1,7 @@
 extends Node
 
-var moon_health 
-var train_health
-var score
+var health 
+var score 
 
 export(PackedScene) var mouse_scene
 
@@ -16,8 +15,7 @@ func _ready():
 
 #starts a level
 func new_game():
-	moon_health = 1000
-	train_health = 100
+	health = 1000
 	score = 0
 	$MouseTimer.start()
 	#$Train.start($Moon/TrainStartLocation.position)
@@ -47,21 +45,12 @@ func _on_MouseTimer_timeout():
 
 
 func _on_Moon_mouse_hit():
-	if moon_health <= 0:
+	if health <= 0:
 		game_over()
-	moon_health -= 10
-	print("HP " + str(moon_health))
+	health -= 10
+	print("HP " + str(health))
 
 
 func _on_TrainControl_TrainCart_weapon_shot_mouse():
 	score += 1
-	update_score()
-
-func update_score():
-	$UI/ScoreLabel.text = str(score)
-
-
-func _on_TrainControl_train_damaged():
-	if (train_health <= 0):
-		game_over()
-	train_health -= 10
+	print("Score " + str(score))
