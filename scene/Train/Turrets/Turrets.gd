@@ -1,11 +1,8 @@
 extends Node2D
 
 signal shot_mouse
-<<<<<<< Updated upstream
-=======
 signal turret_damaged
 
->>>>>>> Stashed changes
 export (PackedScene) var Bullet
 
 func _ready():
