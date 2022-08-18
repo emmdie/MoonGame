@@ -34,6 +34,7 @@ position = Vector2( -553, -767 )
 rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]
+wait_time = 3.0
 
 [connection signal="mouse_hit" from="Moon" to="." method="_on_Moon_mouse_hit"]
 [connection signal="TrainCart_weapon_shot_mouse" from="Moon/TrainControl" to="." method="_on_TrainControl_TrainCart_weapon_shot_mouse"]
