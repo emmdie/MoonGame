@@ -16,6 +16,7 @@ animations = [ {
 } ]
 
 [node name="Mouse" type="RigidBody2D" groups=["mice"]]
+z_index = -1
 collision_mask = 0
 script = ExtResource( 1 )
 
