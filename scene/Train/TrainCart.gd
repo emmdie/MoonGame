@@ -25,7 +25,7 @@ func _on_turret_turret_damaged():
 
 func setEnabled(boolean):
 	$AnimatedSprite.visible = boolean
-	$CollisionShape2D.disabled = !true
+	$CollisionShape2D.disabled = !boolean
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
