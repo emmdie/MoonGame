@@ -17,11 +17,12 @@ func _process(delta):
 		gearDown()
 
 func _ready():
-	cart2.setEnabled(false)
+	cart2.setEnabled(true)
 	cart3.setEnabled(false)
 	cart4.setEnabled(false)
 	cart5.setEnabled(false)
 	cart1.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	cart2.setTurret(load("res://scene/Train/Turrets/Shooter/rocketlauncherT1.tscn"))
 
 
 #takes -1 or 1 as parameter
