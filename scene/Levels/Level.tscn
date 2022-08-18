@@ -41,9 +41,6 @@ rotate = false
 [node name="SpeedLever" parent="UI" instance=ExtResource( 6 )]
 
 [connection signal="mouse_hit" from="Moon" to="." method="_on_Moon_mouse_hit"]
-
-[connection signal="gearChanged" from="Moon/TrainControl" to="UI/SpeedLever" method="_on_TrainControl_gearChanged"]
-
 [connection signal="TrainCart_weapon_shot_mouse" from="Moon/TrainControl" to="." method="_on_TrainControl_TrainCart_weapon_shot_mouse"]
-
+[connection signal="gearChanged" from="Moon/TrainControl" to="UI/SpeedLever" method="_on_TrainControl_gearChanged"]
 [connection signal="timeout" from="MouseTimer" to="." method="_on_MouseTimer_timeout"]
