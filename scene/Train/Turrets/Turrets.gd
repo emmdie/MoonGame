@@ -27,10 +27,12 @@ func turn():
 
 func shoot():
 	var b = Bullet.instance()
+	b.global_position = get_node("Barrel/Muzzle").global_position
+	b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
 	b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
-	b.transform = get_node("Barrel").transform
-	get_parent().get_parent().get_parent().add_child(b)
-	b.position = get_node("Barrel/Muzzle").position
+
+	get_node('/root').add_child(b)
+	
 
 func _on_Bullet_hit_mouse():
 	emit_signal("shot_mouse")
