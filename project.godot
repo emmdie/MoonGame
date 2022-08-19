@@ -12,7 +12,7 @@ config_version=4
 
 config/name="MoonExpress"
 run/main_scene="res://scene/Levels/Level.tscn"
-config/icon="res://icon.png"
+config/icon="res://scene/environment/icon.png"
 
 [display]
 

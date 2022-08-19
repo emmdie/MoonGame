@@ -28,11 +28,12 @@ func setEnabled(boolean):
 	$AnimatedSprite.visible = boolean
 	$CollisionShape2D.disabled = !boolean
 	turret.setEnabled(boolean)
-	
+
 func select(boolean):
 	turret.select(boolean)
 	selected = boolean
-	
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

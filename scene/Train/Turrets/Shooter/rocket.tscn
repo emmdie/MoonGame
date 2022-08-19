@@ -23,3 +23,6 @@ shape = SubResource( 1 )
 position = Vector2( 30, 0 )
 
 [node name="Position2D2" type="Position2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_Rocket_body_entered"]
+[connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]

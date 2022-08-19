@@ -39,6 +39,7 @@ func _on_Bullet_hit_mouse():
 func _on_Hitbox_body_entered(body):
 	if body.get_name().matchn("*mouse*"):
 		emit_signal("turret_damaged")
+		body.queue_free()
 	
 func select(boolean):
 	selected = boolean
