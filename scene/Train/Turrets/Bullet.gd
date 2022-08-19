@@ -7,8 +7,8 @@ var speedy = 100
 
 
 func _physics_process(delta):
-	Position2D
-
+	print(str(global_rotation))
+	
 func _ready():
 	pass
 
