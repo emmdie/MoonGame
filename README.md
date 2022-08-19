@@ -1,5 +1,9 @@
 # MoonGame
 A moon-themed game made in 9 days for the Godot wild jam #48
+## Tools
+* Game Engine: Godot (duh)
+* Art: Krita
+* Audio: Audacity
 
 ## Credits:
 ### Fonts: 
