@@ -15,11 +15,16 @@ gradient = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=2]
 flag_disable_z = true
+spread = 25.69
 gravity = Vector3( 0, 0, 0 )
+initial_velocity = 605.88
+initial_velocity_random = 0.19
 angular_velocity = 0.04
 angular_velocity_random = 1.0
 orbit_velocity = 0.02
 orbit_velocity_random = 0.0
+linear_accel = 50.98
+linear_accel_random = 0.37
 radial_accel = -50.0
 radial_accel_random = 0.18
 tangential_accel_random = 0.72
@@ -46,11 +51,11 @@ position = Vector2( 0, 9.5 )
 shape = SubResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 32, -55 )
+position = Vector2( 26, -57 )
 rotation = -2.06822
 scale = Vector2( 0.1, 0.1 )
-amount = 500
-lifetime = 7.0
+amount = 350
+lifetime = 6.0
 speed_scale = 1.59
 explosiveness = 0.05
 randomness = 0.15
