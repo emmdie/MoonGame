@@ -36,7 +36,6 @@ margin_top = 900.0
 margin_right = 1330.0
 margin_bottom = 1070.0
 custom_fonts/font = SubResource( 7 )
-text = "0"
 
 [node name="return" type="Button" parent="."]
 margin_left = 1112.0
