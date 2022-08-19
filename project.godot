@@ -25,6 +25,7 @@ window/stretch/aspect="keep"
 
 color=false
 colour=false
+audio=false
 
 [input]
 

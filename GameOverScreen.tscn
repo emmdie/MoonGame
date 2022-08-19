@@ -44,5 +44,6 @@ margin_right = 1479.0
 margin_bottom = 1273.0
 custom_fonts/font = SubResource( 8 )
 text = "Return"
+flat = true
 
 [connection signal="pressed" from="return" to="." method="_on_return_pressed"]

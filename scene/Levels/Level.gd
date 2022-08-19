@@ -5,16 +5,17 @@ var train_health
 var max_train_health = 100
 var dmg_to_train = 10
 var score 
+onready var textbox = $Textbox
 
 export(PackedScene) var mouse_scene
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_tree().paused = false
 	new_game()
 	randomize()
 	$GravityField.set_gravity_center($Moon.position)
+	beginningSequence()
 
 #starts a level
 func new_game():
@@ -32,7 +33,7 @@ func new_game():
 func game_over():
 	$MouseTimer.stop()
 	get_tree().call_group("mice", "queue_free")
-	$GameOverScreen/GameOverScore.text = str(score)
+	$GameOverScreen/GameOverScore.text = "Score: "+str(score)
 	$GameOverScreen.show()
 	$UI/ScoreLabel.hide()
 	get_tree().paused = true
@@ -78,7 +79,13 @@ func _on_TrainControl_train_damaged():
 		train_health -= dmg_to_train
 		$UI/TrainHealthBar.value = train_health
 		
-
-
 func _on_GameOverScreen_restart():
 	get_tree().change_scene("res://scene/UI/MainMenu.tscn")
+
+func beginningSequence():
+	textbox.queue_text("1,2....3, Connection stable, Checks passed, train online")
+	textbox.queue_text("Intern! You are the only thing standing between the moon and")
+	textbox.queue_text("the space mice swarm")
+	textbox.queue_text("Change gears with (w/up) and (s/down)")
+	textbox.queue_text("Fire using your mouse, you better don't miss")
+	textbox.queue_text("If either the train or moon dies, that's it")
