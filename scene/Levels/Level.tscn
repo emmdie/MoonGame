@@ -243,25 +243,25 @@ void fragment()
 	COLOR = text;
 }"
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=7]
 shader = SubResource( 4 )
 shader_param/overlay = true
-shader_param/scanlines_opacity = 0.68
-shader_param/scanlines_width = 0.302
-shader_param/grille_opacity = 0.379
+shader_param/scanlines_opacity = 0.3
+shader_param/scanlines_width = 0.01
+shader_param/grille_opacity = 0.01
 shader_param/resolution = Vector2( 2880, 2160 )
 shader_param/pixelate = true
 shader_param/roll = true
 shader_param/roll_speed = 5.0
-shader_param/roll_size = 21.863
+shader_param/roll_size = 23.0
 shader_param/roll_variation = 1.8
-shader_param/distort_intensity = 0.05
+shader_param/distort_intensity = 0.02
 shader_param/noise_opacity = 0.21
 shader_param/noise_speed = 3.0
 shader_param/static_noise_intensity = 0.06
 shader_param/aberration = 0.01
 shader_param/brightness = 1.4
-shader_param/discolor = true
+shader_param/discolor = false
 shader_param/warp_amount = 5.0
 shader_param/clip_warp = false
 shader_param/vignette_intensity = 0.4
@@ -277,7 +277,7 @@ size = 100
 font_data = ExtResource( 7 )
 
 [node name="Level" type="ColorRect"]
-material = SubResource( 5 )
+material = SubResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
