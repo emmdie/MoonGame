@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/art/Train/Locomotive.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/Train/cloudsNotPoop.png" type="Texture" id=2]
@@ -12,32 +12,21 @@ colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.0941176 )
 [sub_resource type="GradientTexture" id=4]
 gradient = SubResource( 3 )
 
-[sub_resource type="Curve" id=5]
-max_value = 2.0
-_data = [ Vector2( 0.0326087, 0.254545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 5 )
-
-[sub_resource type="Curve" id=7]
-max_value = 3.48
-_data = [ Vector2( 0.0326087, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=8]
-curve = SubResource( 7 )
-
 [sub_resource type="ParticlesMaterial" id=2]
-trail_size_modifier = SubResource( 8 )
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 400.0
-orbit_velocity = 0.0
+angular_velocity = 0.04
+angular_velocity_random = 1.0
+orbit_velocity = 0.02
 orbit_velocity_random = 0.0
+radial_accel = -50.0
+radial_accel_random = 0.18
+tangential_accel_random = 0.72
+damping_random = 0.79
 angle = 409.4
 angle_random = 0.71
 scale = 0.05
 scale_random = 0.1
-scale_curve = SubResource( 6 )
 color_ramp = SubResource( 4 )
 
 [node name="locomotive" type="StaticBody2D"]

@@ -11,6 +11,7 @@ export(PackedScene) var mouse_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().paused = false
 	new_game()
 	randomize()
 	$GravityField.set_gravity_center($Moon.position)
@@ -80,5 +81,4 @@ func _on_TrainControl_train_damaged():
 
 
 func _on_GameOverScreen_restart():
-	pass 
-	#return to main titlescreen
+	get_tree().change_scene("res://scene/UI/MainMenu.tscn")
