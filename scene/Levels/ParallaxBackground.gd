@@ -18,7 +18,7 @@ func _input(event):
 		relative_y = -1 * (mouse_y - (viewport_size.y/2)) / (viewport_size.y/2)
 		# print("relative_y: " + str(relative_y))
 		# print("relative_x: " + str(relative_x))
-		var count = 4
+		var count = 10
 		for child in self.get_children(): # for each parallaxlayer do...
 			child.motion_offset.x = count * relative_x
 			child.motion_offset.y = count * relative_y

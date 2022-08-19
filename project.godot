@@ -11,8 +11,8 @@ config_version=4
 [application]
 
 config/name="MoonExpress"
-run/main_scene="res://scene/Levels/Level.tscn"
-config/icon="res://scene/environment/icon.png"
+run/main_scene="res://scene/UI/MainMenu.tscn"
+config/icon="res://icon.png"
 
 [display]
 
