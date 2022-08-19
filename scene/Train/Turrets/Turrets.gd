@@ -25,8 +25,6 @@ func setEnabled(boolean):
 	
 func turn():
 	get_node("Barrel").look_at(get_global_mouse_position())
-	
-
 
 func shoot():
 	var b = Bullet.instance()
@@ -34,7 +32,6 @@ func shoot():
 	b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
 	b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
 	get_node('/root').add_child(b)
-	
 
 func _on_Bullet_hit_mouse():
 	emit_signal("shot_mouse")
@@ -43,6 +40,6 @@ func _on_Hitbox_body_entered(body):
 	if body.get_name().matchn("*mouse*"):
 		emit_signal("turret_damaged")
 		body.queue_free()
-	
+
 func select(boolean):
 	selected = boolean
