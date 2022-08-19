@@ -2,7 +2,7 @@ extends Node
 
 var moon_health 
 var train_health
-var max_train_health = 10
+var max_train_health = 100
 var dmg_to_train = 10
 var score 
 
