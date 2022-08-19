@@ -21,3 +21,5 @@ A moon-themed game made in 9 days for the Godot wild jam #48
 * pend00/Peter Höglund: [VHS and CRT monitor effect](https://godotshaders.com/shader/vhs-and-crt-monitor-effect/), [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)
 ### Music
  * Prairie Oyster by [Ben Reber](https://soundcloud.com/user-411047148/sets/the-hero-approaches), CC BY 4.0 Licence https://creativecommons.org/licenses/by/4.0/
+### Other
+* Textbox Tutorial by John Topielski https://www.youtube.com/watch?v=QEHOiORnXIk
