@@ -12,7 +12,6 @@ func _ready():
 	randomize()
 	$GravityField.set_gravity_center($Moon.position)
 
-
 #starts a level
 func new_game():
 	health = 1000
@@ -54,3 +53,4 @@ func _on_Moon_mouse_hit():
 func _on_TrainControl_TrainCart_weapon_shot_mouse():
 	score += 1
 	print("Score " + str(score))
+
