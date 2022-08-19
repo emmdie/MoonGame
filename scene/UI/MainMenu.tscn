@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scene/Levels/ParallaxBackground.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/space/AssetShare/starsmixed (1).png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/art/space/AssetShare/starsMixed.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/space/AssetShare/starssmall.png" type="Texture" id=5]
 [ext_resource path="res://scene/UI/MainMenu.gd" type="Script" id=6]
+[ext_resource path="res://scene/Train/locomotive.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Shader" id=4]
 code = "/*
@@ -254,7 +255,7 @@ shader_param/distort_intensity = 0.05
 shader_param/noise_opacity = 0.21
 shader_param/noise_speed = 3.0
 shader_param/static_noise_intensity = 0.06
-shader_param/aberration = 0.01
+shader_param/aberration = 0.015
 shader_param/brightness = 1.4
 shader_param/discolor = true
 shader_param/warp_amount = 5.0
@@ -297,23 +298,27 @@ position = Vector2( 836.5, 434 )
 scale = Vector2( 1.42773, 1.3825 )
 texture = ExtResource( 2 )
 
+[node name="locomotive" parent="ParallaxBackground/ParallaxLayer3/Sprite" instance=ExtResource( 7 )]
+position = Vector2( 800, 700 )
+scale = Vector2( 3, 3 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 margin_right = 2560.0
 margin_bottom = 250.0
-size_flags_horizontal = 3
 custom_fonts/mono_font = SubResource( 6 )
 custom_fonts/bold_italics_font = SubResource( 6 )
 custom_fonts/italics_font = SubResource( 6 )
 custom_fonts/bold_font = SubResource( 6 )
 custom_fonts/normal_font = SubResource( 6 )
-text = "AssGameFuck"
+text = "Title goes here"
 fit_content_height = true
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
