@@ -349,7 +349,7 @@ margin_top = 804.0
 margin_right = 2560.0
 margin_bottom = 1025.0
 custom_fonts/font = SubResource( 6 )
-text = "About"
+text = "About/Code"
 flat = true
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
