@@ -5,12 +5,14 @@ signal turret_damaged
 
 export (PackedScene) var Bullet
 var selected = false
+var enabled
+
 
 func _ready():
 	$Hitbox.connect("body_entered", self, "_on_Hitbox_body_entered")
 
 func _physics_process(_delta):
-	if(selected):
+	if(selected&&enabled):
 		turn()
 		if Input.is_action_just_pressed("shoot"):
 			shoot()
@@ -19,6 +21,7 @@ func setEnabled(boolean):
 	$Barrel.visible = boolean
 	$Base.visible = boolean
 	get_node("Hitbox/HitboxArea").disabled = !boolean
+	enabled = boolean
 	
 func turn():
 	get_node("Barrel").look_at(get_global_mouse_position())
