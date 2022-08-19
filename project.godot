@@ -21,6 +21,11 @@ window/size/height=1600
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
+[global]
+
+color=false
+colour=false
+
 [input]
 
 shoot={
@@ -72,4 +77,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0.0627451, 0.027451, 0.12549, 1 )
 environment/default_environment="res://default_env.tres"

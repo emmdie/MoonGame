@@ -79,4 +79,3 @@ func deselectAllCarts():
 	cart3.select(false)
 	cart4.select(false)
 	cart5.select(false)
-	
