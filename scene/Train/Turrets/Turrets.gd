@@ -30,7 +30,6 @@ func shoot():
 	b.global_position = get_node("Barrel/Muzzle").global_position
 	b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
 	b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
-
 	get_node('/root').add_child(b)
 	
 
