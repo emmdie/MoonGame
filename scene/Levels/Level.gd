@@ -16,9 +16,11 @@ func _ready():
 	randomize()
 	$GravityField.set_gravity_center($Moon.position)
 	beginningSequence()
+	updateCartLabels()
 
 #starts a level
 func new_game():
+	get_tree().call_group("mice", "queue_free")
 	$GameOverScreen.hide()
 	$UI/ScoreLabel.show()
 	moon_health = 1000
@@ -28,11 +30,10 @@ func new_game():
 	score = 0
 	$MouseTimer.start()
 	#$Train.start($Moon/TrainStartLocation.position)
-
-#this is called when the player loses in a level
+	updateCartLabels()
+	
 func game_over():
 	$MouseTimer.stop()
-	get_tree().call_group("mice", "queue_free")
 	$GameOverScreen/GameOverScore.text = "Score: "+str(score)
 	$GameOverScreen.show()
 	$UI/ScoreLabel.hide()
@@ -89,3 +90,9 @@ func beginningSequence():
 	textbox.queue_text("Change gears with (w/up) and (s/down)")
 	textbox.queue_text("Fire using your mouse, you better don't miss")
 	textbox.queue_text("If either the train or moon dies, that's it")
+	
+func updateCartLabels():
+	var array = $UI/CartsUi.getArrayOfCarts()
+	$Moon/TrainControl.updateAmmoRelations(array)
+	
+	
