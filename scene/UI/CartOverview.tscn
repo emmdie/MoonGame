@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scene/UI/cartUi.tscn" type="PackedScene" id=1]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 100.0
+margin_bottom = -200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 2560.0
+margin_bottom = 321.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Cart5" parent="CenterContainer" instance=ExtResource( 1 )]
+scale = Vector2( 0.7, 0.7 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+margin_top = 325.0
+margin_right = 2560.0
+margin_bottom = 646.0
+size_flags_vertical = 3
+
+[node name="Cart4" parent="CenterContainer2" instance=ExtResource( 1 )]
+position = Vector2( 0, -4 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="CenterContainer3" type="CenterContainer" parent="."]
+margin_top = 650.0
+margin_right = 2560.0
+margin_bottom = 971.0
+size_flags_vertical = 3
+
+[node name="Cart3" parent="CenterContainer3" instance=ExtResource( 1 )]
+position = Vector2( 0, -8 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="CenterContainer4" type="CenterContainer" parent="."]
+margin_top = 975.0
+margin_right = 2560.0
+margin_bottom = 1296.0
+size_flags_vertical = 3
+
+[node name="Cart2" parent="CenterContainer4" instance=ExtResource( 1 )]
+position = Vector2( 0, -12 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="CenterContainer5" type="CenterContainer" parent="."]
+margin_top = 1300.0
+margin_right = 2560.0
+margin_bottom = 1300.0
+
+[node name="Cart1" parent="CenterContainer5" instance=ExtResource( 1 )]
+position = Vector2( 0, -16 )
+scale = Vector2( 0.7, 0.7 )
