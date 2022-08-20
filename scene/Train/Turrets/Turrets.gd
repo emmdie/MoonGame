@@ -6,7 +6,7 @@ signal turret_damaged
 export (PackedScene) var Bullet
 var selected = false
 var enabled
-
+onready var gunfire = get_node("Barrel/Muzzle/Gunfire")
 
 func _ready():
 	$Hitbox.connect("body_entered", self, "_on_Hitbox_body_entered")
@@ -32,6 +32,7 @@ func shoot():
 	b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
 	b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
 	get_node('/root').add_child(b)
+	gunfire.emitting = true
 
 func _on_Bullet_hit_mouse():
 	emit_signal("shot_mouse")

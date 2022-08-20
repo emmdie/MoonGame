@@ -12,6 +12,7 @@ func _physics_process(delta):
 func _ready():
 	$VisibilityNotifier2D.connect("viewport_exited", self, "_on_VisibilityNotifier2D_viewport_exited")
 	connect("body_entered", self, "_on_Bullet_body_entered")
+
 	
 
 func _on_Bullet_body_entered(body):

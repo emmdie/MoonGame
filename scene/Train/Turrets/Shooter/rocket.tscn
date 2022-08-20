@@ -24,5 +24,23 @@ position = Vector2( 30, 0 )
 
 [node name="Position2D2" type="Position2D" parent="."]
 
+[node name="Gunfire" type="CPUParticles2D" parent="."]
+position = Vector2( -15, -2 )
+rotation = 2.98277
+amount = 20
+lifetime = 0.3
+preprocess = 15.0
+speed_scale = 2.0
+randomness = 0.18
+lifetime_randomness = 0.39
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 10.55
+spread = 70.27
+gravity = Vector2( 0, 0 )
+initial_velocity = 321.1
+scale_amount = 8.0
+color = Color( 1, 0.760784, 0.235294, 1 )
+
 [connection signal="body_entered" from="." to="." method="_on_Rocket_body_entered"]
 [connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]
