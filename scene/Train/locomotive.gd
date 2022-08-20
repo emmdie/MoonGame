@@ -19,3 +19,4 @@ func _ready():
 func _on_Hitbox_body_entered(body):
 	if body.get_name().matchn("*Mouse*"):
 		emit_signal("damaged")
+		body.queue_free()
