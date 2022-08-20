@@ -15,13 +15,36 @@ func _process(delta):
 		gearUp()
 	if(Input.is_action_just_pressed("speed_down")):
 		gearDown()
-
+		
+	if(Input.is_action_just_pressed("select_cart1")):
+		deselectAllCarts()
+		cart1.select(true)
+	if(Input.is_action_just_pressed("select_cart2")):
+		deselectAllCarts()
+		cart2.select(true)
+	if(Input.is_action_just_pressed("select_cart3")):
+		deselectAllCarts()
+		cart3.select(true)
+	if(Input.is_action_just_pressed("select_cart4")):
+		deselectAllCarts()
+		cart4.select(true)
+	if(Input.is_action_just_pressed("select_cart5")):
+		deselectAllCarts()
+		cart5.select(true)
+		
 func _ready():
-	cart2.setEnabled(false)
-	cart3.setEnabled(false)
+	cart1.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	cart2.setTurret(load("res://scene/Train/Turrets/Shooter/rocketlauncherT1.tscn"))
+	cart3.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	cart4.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	cart5.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	cart1.setEnabled(true)
+	cart2.setEnabled(true)
+	cart3.setEnabled(true)
 	cart4.setEnabled(false)
 	cart5.setEnabled(false)
-	cart1.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	deselectAllCarts()
+	cart1.select(true)
 
 
 #takes -1 or 1 as parameter
@@ -44,11 +67,6 @@ func updateCurrentSpeed(delta):
 	else:
 		return (currentSpeed-2*delta*(currentSpeed-targetSpeed))
 
-
-
-
-
-
 func _on_TrainCart_weapon_hit_mouse():
 	emit_signal("TrainCart_weapon_shot_mouse")
 
@@ -58,3 +76,10 @@ func _on_TrainCart_cart_damaged():
 
 func _on_locomotive_damaged():
 	emit_signal("train_damaged")
+	
+func deselectAllCarts():
+	cart1.select(false)
+	cart2.select(false)
+	cart3.select(false)
+	cart4.select(false)
+	cart5.select(false)

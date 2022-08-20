@@ -12,7 +12,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -20,5 +19,5 @@ func _ready():
 
 func _on_Hitbox_body_entered(body):
 	if body.get_name().matchn("*Mouse*"):
-		body.queue_free()
 		emit_signal("damaged")
+		body.queue_free()
