@@ -17,25 +17,20 @@ func _process(delta):
 		gearDown()
 		
 	if(Input.is_action_just_pressed("select_cart1")):
-		if(cart1.enabled==true):
-			deselectAllCarts()
-			cart1.select(true)
+		deselectAllCarts()
+		cart1.select(true)
 	if(Input.is_action_just_pressed("select_cart2")):
-		if(cart2.enabled==true):
-			deselectAllCarts()
-			cart2.select(true)
+		deselectAllCarts()
+		cart2.select(true)
 	if(Input.is_action_just_pressed("select_cart3")):
-		if(cart3.enabled==true):
-			deselectAllCarts()
-			cart3.select(true)
+		deselectAllCarts()
+		cart3.select(true)
 	if(Input.is_action_just_pressed("select_cart4")):
-		if(cart4.enabled==true):
-			deselectAllCarts()
-			cart4.select(true)
+		deselectAllCarts()
+		cart4.select(true)
 	if(Input.is_action_just_pressed("select_cart5")):
-		if(cart5.enabled==true):
-			deselectAllCarts()
-			cart5.select(true)
+		deselectAllCarts()
+		cart5.select(true)
 		
 func _ready():
 	cart1.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
@@ -45,7 +40,7 @@ func _ready():
 	cart5.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
 	cart1.setEnabled(true)
 	cart2.setEnabled(true)
-	cart3.setEnabled(false)
+	cart3.setEnabled(true)
 	cart4.setEnabled(false)
 	cart5.setEnabled(false)
 	deselectAllCarts()
@@ -88,10 +83,3 @@ func deselectAllCarts():
 	cart3.select(false)
 	cart4.select(false)
 	cart5.select(false)
-
-func updateAmmoRelations(array):
-	cart1.setLabel(array[0])
-	cart2.setLabel(array[1])
-	cart3.setLabel(array[2])
-	cart4.setLabel(array[3])
-	cart5.setLabel(array[4])
