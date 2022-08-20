@@ -7,6 +7,21 @@
 [ext_resource path="res://scene/Train/TrainControl.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/UI/Lever.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/font/SpaceCowboy-6RXg.ttf" type="DynamicFontData" id=7]
+<<<<<<< Updated upstream
+=======
+[ext_resource path="res://assets/art/space/AssetShare/starsMixed.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/space/AssetShare/starssmall.png" type="Texture" id=9]
+[ext_resource path="res://scene/Levels/ParallaxBackground.gd" type="Script" id=10]
+[ext_resource path="res://assets/art/space/AssetShare/starsmixed (1).png" type="Texture" id=11]
+[ext_resource path="res://assets/art/UI/trainHealthBar/balkenblau.png" type="Texture" id=12]
+[ext_resource path="res://GameOverScreen.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/music/Prairie Oyster.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/art/UI/trainHealthBar/outline.png" type="Texture" id=15]
+[ext_resource path="res://scene/UI/Textbox.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/art/UI/trainHealthBar/balkenweiß.png" type="Texture" id=17]
+[ext_resource path="res://assets/art/UI/moonHealthBar/smallMoonCircumference.png" type="Texture" id=18]
+[ext_resource path="res://assets/art/UI/moonHealthBar/smallMoon.png" type="Texture" id=19]
+>>>>>>> Stashed changes
 
 [sub_resource type="Curve2D" id=1]
 _data = {

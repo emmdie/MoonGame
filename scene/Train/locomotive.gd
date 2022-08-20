@@ -22,3 +22,7 @@ func _on_Hitbox_body_entered(body):
 	if body.get_name().matchn("*Mouse*"):
 		body.queue_free()
 		emit_signal("damaged")
+<<<<<<< Updated upstream
+=======
+		body.queue_free()
+>>>>>>> Stashed changes
