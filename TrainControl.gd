@@ -77,6 +77,10 @@ func _on_TrainCart_weapon_hit_mouse():
 
 func _on_TrainCart_cart_damaged():
 	emit_signal("train_damaged")
+
+
+func _on_locomotive_damaged():
+	emit_signal("train_damaged")
 	
 func deselectAllCarts():
 	cart1.select(false)

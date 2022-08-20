@@ -1,4 +1,5 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
+
 
 [ext_resource path="res://scene/Moons/Moon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/environment/GravityField.tscn" type="PackedScene" id=2]
@@ -11,12 +12,15 @@
 [ext_resource path="res://assets/art/space/AssetShare/starssmall.png" type="Texture" id=9]
 [ext_resource path="res://scene/Levels/ParallaxBackground.gd" type="Script" id=10]
 [ext_resource path="res://assets/art/space/AssetShare/starsmixed (1).png" type="Texture" id=11]
-[ext_resource path="res://assets/art/UI/progressBar/pinkBar.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/UI/trainHealthBar/balkenblau.png" type="Texture" id=12]
 [ext_resource path="res://GameOverScreen.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/music/Prairie Oyster.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/art/UI/progressBar/whiteBar.png" type="Texture" id=15]
+[ext_resource path="res://assets/art/UI/trainHealthBar/outline.png" type="Texture" id=15]
 [ext_resource path="res://scene/UI/Textbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scene/UI/CartOverview.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/art/UI/trainHealthBar/balkenweiß.png" type="Texture" id=17]
+[ext_resource path="res://assets/art/UI/moonHealthBar/smallMoonCircumference.png" type="Texture" id=18]
+[ext_resource path="res://assets/art/UI/moonHealthBar/smallMoon.png" type="Texture" id=19]
 
 [sub_resource type="Shader" id=4]
 code = "/*
@@ -334,17 +338,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2412.0
 margin_top = 1542.0
-margin_right = 3412.0
+margin_right = 3062.0
 margin_bottom = 1642.0
 rect_rotation = 270.0
 max_value = 1000.0
-texture_under = ExtResource( 15 )
+texture_under = ExtResource( 17 )
+texture_over = ExtResource( 15 )
 texture_progress = ExtResource( 12 )
+fill_mode = 1
 stretch_margin_top = 10
 stretch_margin_bottom = 10
 
 [node name="CartsUi" parent="UI" instance=ExtResource( 17 )]
 position = Vector2( 100, 1100 )
+[node name="MoonHealthBar" type="TextureProgress" parent="UI"]
+margin_left = 2207.0
+margin_top = 4.0
+margin_right = 2557.0
+margin_bottom = 358.0
+max_value = 1000.0
+texture_over = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+fill_mode = 5
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource( 10 )
@@ -369,6 +384,7 @@ scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 11 )
 
 [node name="GameOverScreen" parent="." instance=ExtResource( 13 )]
+visible = false
 show_behind_parent = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

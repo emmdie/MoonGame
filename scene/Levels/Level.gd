@@ -1,5 +1,6 @@
 extends Node
 
+var max_moon_health = 1000
 var moon_health 
 var train_health
 var max_train_health = 100
@@ -23,10 +24,18 @@ func new_game():
 	get_tree().call_group("mice", "queue_free")
 	$GameOverScreen.hide()
 	$UI/ScoreLabel.show()
-	moon_health = 1000
+	
+	moon_health = max_moon_health
+	
+	$UI/MoonHealthBar.max_value = max_moon_health
+	$UI/MoonHealthBar.value = moon_health
+	
 	train_health = max_train_health
 	$UI/TrainHealthBar.max_value = max_train_health
 	$UI/TrainHealthBar.value = train_health
+	
+
+
 	score = 0
 	$MouseTimer.start()
 	#$Train.start($Moon/TrainStartLocation.position)
@@ -63,6 +72,8 @@ func _on_Moon_mouse_hit():
 		game_over()
 	else:
 		moon_health -= 10
+		$UI/MoonHealthBar.value = moon_health
+
 
 
 func _on_TrainControl_TrainCart_weapon_shot_mouse():
