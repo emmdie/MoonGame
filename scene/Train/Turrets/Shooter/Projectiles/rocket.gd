@@ -1,1 +1,1 @@
-extends "res://scene/Train/Turrets/Turrets.gd"
+extends "res://scene/Train/Turrets/Shooter/Projectiles/Bullet.gd"
