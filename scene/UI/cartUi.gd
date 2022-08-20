@@ -30,5 +30,6 @@ func _on_ReloadTimer_timeout():
 	ammoCurrent = ammoMax
 
 func shoot():
-	ammoCurrent -= ammoCurrent
+	print(str(ammoCurrent))
+	ammoCurrent -= 1
 	updateLabel()
