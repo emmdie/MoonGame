@@ -1,10 +1,10 @@
 extends Node2D
-export var ammoMax = 10
-export var ammoCurrent = 0
+var ammoMax
+var ammoCurrent
 var reloading = false
 
 func _ready():
-	reload(3)
+	$ProgressBar.visible = false
 
 func _process(delta):
 	if (reloading ==true):
@@ -20,9 +20,15 @@ func reload(duration):
 	$ReloadTimer.wait_time = duration
 	$ReloadTimer.start(duration)
 	$ProgressBar.visible = true
+	ammoCurrent = ammoMax
+	updateLabel()
 
 func _on_ReloadTimer_timeout():
 	$AmmoLabel.visible = true
 	$ProgressBar.visible = false
 	reloading = false
 	ammoCurrent = ammoMax
+
+func shoot():
+	ammoCurrent -= ammoCurrent
+	updateLabel()

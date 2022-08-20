@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scene/Moons/Moon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/environment/GravityField.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/art/UI/trainHealthBar/balkenweiß.png" type="Texture" id=17]
 [ext_resource path="res://assets/art/UI/moonHealthBar/smallMoonCircumference.png" type="Texture" id=18]
 [ext_resource path="res://assets/art/UI/moonHealthBar/smallMoon.png" type="Texture" id=19]
+[ext_resource path="res://scene/UI/CartOverview.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Shader" id=4]
 code = "/*
@@ -315,6 +316,7 @@ wait_time = 4096.0
 [node name="UI" type="Node2D" parent="."]
 
 [node name="SpeedLever" parent="UI" instance=ExtResource( 6 )]
+position = Vector2( 300, 270 )
 
 [node name="ScoreLabel" type="Label" parent="UI"]
 anchor_left = 0.5
@@ -355,6 +357,9 @@ max_value = 1000.0
 texture_over = ExtResource( 18 )
 texture_progress = ExtResource( 19 )
 fill_mode = 5
+
+[node name="CartsUI" parent="UI" instance=ExtResource( 20 )]
+position = Vector2( 20, 1100 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource( 10 )

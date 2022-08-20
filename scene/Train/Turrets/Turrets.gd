@@ -7,7 +7,11 @@ export (PackedScene) var Bullet
 var selected = false
 var enabled
 onready var gunfire = get_node("Barrel/Muzzle/Gunfire")
-
+export var maxAmmo = 5
+export onready var ammo = maxAmmo
+export var reloadTime = 2
+var label
+var reloading = false
 func _ready():
 	$Hitbox.connect("body_entered", self, "_on_Hitbox_body_entered")
 
@@ -27,13 +31,18 @@ func turn():
 	get_node("Barrel").look_at(get_global_mouse_position())
 
 func shoot():
-	var b = Bullet.instance()
-	b.global_position = get_node("Barrel/Muzzle").global_position
-	b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
-	b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
-	get_node('/root').add_child(b)
-	gunfire.emitting = true
-
+	if (ammo >= 1):
+		var b = Bullet.instance()
+		b.global_position = get_node("Barrel/Muzzle").global_position
+		b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
+		b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
+		get_node('/root').add_child(b)
+		gunfire.emitting = true
+		label.shoot()
+		ammo =ammo- 1
+		if (ammo == 0&&!reloading):
+			reload()
+			
 func _on_Bullet_hit_mouse():
 	emit_signal("shot_mouse")
 
@@ -45,3 +54,22 @@ func _on_Hitbox_body_entered(body):
 
 func select(boolean):
 	selected = boolean
+
+func reload():
+	reloading = true
+	label.reload(reloadTime)
+	var t = Timer.new()
+	t.set_wait_time(3)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	t.queue_free()
+	ammo = maxAmmo
+	reloading = false
+	
+
+func setLabel(newLabel):
+	label = newLabel
+	newLabel.ammoCurrent = ammo
+	newLabel.ammoMax = maxAmmo

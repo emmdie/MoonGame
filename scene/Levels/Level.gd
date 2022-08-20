@@ -31,7 +31,7 @@ func new_game():
 	train_health = max_train_health
 	$UI/TrainHealthBar.max_value = max_train_health
 	$UI/TrainHealthBar.value = train_health
-	
+	updateCartLabels()
 
 
 	score = 0
@@ -100,3 +100,8 @@ func beginningSequence():
 	textbox.queue_text("Change gears with (w/up) and (s/down)")
 	textbox.queue_text("Fire using your mouse, you better don't miss")
 	textbox.queue_text("If either the train or moon dies, that's it")
+	updateCartLabels()
+
+func updateCartLabels():
+	var array = $UI/CartsUI.getArrayOfCarts()
+	$Moon/TrainControl.updateAmmoRelations(array)

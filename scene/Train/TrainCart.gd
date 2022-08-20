@@ -5,6 +5,8 @@ signal cart_damaged
 
 export (PackedScene) var turret
 var selected = false
+var enabled = true
+var label
 
 func fireTurret():
 	pass
@@ -25,9 +27,14 @@ func _on_turret_turret_damaged():
 	emit_signal("cart_damaged")
 
 func setEnabled(boolean):
+	enabled=boolean
 	$AnimatedSprite.visible = boolean
 	$CollisionShape2D.disabled = !boolean
 	turret.setEnabled(boolean)
+	
+func setLabel(newLabel):
+	label = newLabel
+	turret.setLabel(newLabel)
 
 func select(boolean):
 	turret.select(boolean)
