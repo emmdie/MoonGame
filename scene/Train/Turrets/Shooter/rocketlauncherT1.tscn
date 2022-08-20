@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/art/Train/Turrets/rocket.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/Train/Turrets/base2.kra.png" type="Texture" id=2]
 [ext_resource path="res://scene/Train/Turrets/Shooter/rocketlauncherT1.gd" type="Script" id=3]
-[ext_resource path="res://scene/Train/Turrets/Shooter/rocket.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/Train/Turrets/Shooter/Projectiles/rocket.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 28.9998
