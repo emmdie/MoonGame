@@ -18,7 +18,7 @@ func _ready():
 	$GravityField.set_gravity_center($Moon.position)
 	beginningSequence()
 
-#starts a level
+#starts the 
 func new_game():
 	$GameOverScreen.hide()
 	$UI/ScoreLabel.show()
