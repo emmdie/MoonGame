@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/art/UI/trainHealthBar/balkenweiß.png" type="Texture" id=17]
 [ext_resource path="res://assets/art/UI/moonHealthBar/smallMoonCircumference.png" type="Texture" id=18]
 [ext_resource path="res://assets/art/UI/moonHealthBar/smallMoon.png" type="Texture" id=19]
+[ext_resource path="res://assets/art/UI/progressBar/pinkBar.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/UI/progressBar/whiteBar.png" type="Texture" id=15]
 
 [sub_resource type="Shader" id=4]
 code = "/*
@@ -321,10 +323,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 59.0
-margin_top = 1319.0
-margin_right = 304.0
-margin_bottom = 1432.0
+margin_left = 2304.0
+margin_top = 47.0
+margin_right = 2549.0
+margin_bottom = 160.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 

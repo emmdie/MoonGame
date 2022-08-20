@@ -32,6 +32,8 @@ func new_game():
 	$UI/TrainHealthBar.max_value = max_train_health
 	$UI/TrainHealthBar.value = train_health
 	
+
+
 	score = 0
 	$MouseTimer.start()
 	#$Train.start($Moon/TrainStartLocation.position)
@@ -70,6 +72,7 @@ func _on_Moon_mouse_hit():
 	else:
 		moon_health -= 10
 		$UI/MoonHealthBar.value = moon_health
+
 
 
 func _on_TrainControl_TrainCart_weapon_shot_mouse():
