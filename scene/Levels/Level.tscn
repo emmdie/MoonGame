@@ -19,8 +19,6 @@
 [ext_resource path="res://assets/art/UI/trainHealthBar/balkenweiß.png" type="Texture" id=17]
 [ext_resource path="res://assets/art/UI/moonHealthBar/smallMoonCircumference.png" type="Texture" id=18]
 [ext_resource path="res://assets/art/UI/moonHealthBar/smallMoon.png" type="Texture" id=19]
-[ext_resource path="res://assets/art/UI/progressBar/pinkBar.png" type="Texture" id=12]
-[ext_resource path="res://assets/art/UI/progressBar/whiteBar.png" type="Texture" id=15]
 
 [sub_resource type="Shader" id=4]
 code = "/*
