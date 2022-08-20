@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 signal damaged
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

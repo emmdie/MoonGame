@@ -38,7 +38,8 @@ func _on_Bullet_hit_mouse():
 	emit_signal("shot_mouse")
 
 func _on_Hitbox_body_entered(body):
-	if body.get_name().matchn("*mouse*"):
+	if body.get_name().matchn("*Mouse*"):
+		body.queue_free()
 		emit_signal("turret_damaged")
 		body.queue_free()
 
