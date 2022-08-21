@@ -35,6 +35,7 @@ func _ready():
 
 #starts the 
 func new_game():
+	$Music.play()
 	$GameOverScreen.hide()
 	$UI/ScoreLabel.show()
 	
@@ -120,8 +121,8 @@ func beginningSequence():
 	textbox.queue_text("Imagine a life without the moon... No more tides")
 	textbox.queue_text("Try moving it a bit with W/S or arrow buttons a few times")
 	updateCartLabels()
-	#mouseTimer.paused = true
-	#zeppelinTimer.paused = true
+	mouseTimer.paused = true
+	zeppelinTimer.paused = true
 	
 func ratAppearSequence():
 	textbox.queue_text("Oh no, a huge mischief of mice is approaching")
