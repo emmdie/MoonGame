@@ -21,6 +21,14 @@ func _ready():
 	$GravityField.set_gravity_center($Moon.position)
 	$ZeppelinControll.set("target_position", $ZeppelinControll.position - $Moon.position)
 	beginningSequence()
+	var t = Timer.new()
+	t.set_wait_time(10)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	ratAppearSequence()
+	
 
 #starts the 
 func new_game():
@@ -103,12 +111,18 @@ func beginningSequence():
 	textbox.queue_text("Our job is to remote control the robot train cheesepiercer")
 	textbox.queue_text("It's humanities strongest weapon against the space mice")
 	textbox.queue_text("Imagine a life without the moon... No more tides")
-	textbox.queue_text("Try moving it a bit with W/S or the arrow buttons")
+	textbox.queue_text("Try moving it a bit with W/S or arrow buttons a few times")
 	updateCartLabels()
 	mouseTimer.paused = true
 	zeppelinTimer.paused = true
 	
-
+func ratAppearSequence():
+	textbox.queue_text("Oh no, a huge mischief of mice is approaching")
+	textbox.queue_text("Guess you gauda learn on the job")
+	textbox.queue_text("You ought to stop them! I Swiss you best of luck intern")
+	textbox.queue_text("Shoot with your mouse. I'll get some upgrades ASAP")
+	
+	
 
 func updateCartLabels():
 	var array = $UI/CartsUI.getArrayOfCarts()
