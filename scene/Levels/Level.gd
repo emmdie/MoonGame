@@ -130,9 +130,78 @@ func ratAppearSequence():
 func score14Sequence():
 	textbox.queue_text("Wow, doing great out there!")
 	textbox.queue_text("Gouda job intern, you get to upgrade one of the carts")
+	textbox.queue_text("For now, might be best to upgrade your cart 1")	
+	textbox.queue_text("Right now you have the shooter")	
+	var t = Timer.new()
+	t.set_wait_time(1)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	upgradeScreen()
+	updateCartLabels()
+	mouseTimer.wait_time = 5.5
+	
+func score23Sequence():
+	textbox.queue_text("Just got corporate to give you another cart!")
 	trainControl.cart2.setEnabled(true)
 	updateCartLabels()
-	mouseTimer = 5
+	
+func score27Sequence():
+	textbox.queue_text("Damnit intern, we have spotted zeppelins!")
+	textbox.queue_text("Take an extra upgrade to fend them off!")
+	zeppelinTimer.paused = false
+	zeppelinTimer.wait_time = 10
+	var t = Timer.new()
+	t.set_wait_time(1)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	upgradeScreen()
+	updateCartLabels()
+	
+func score40Sequence():
+	mouseTimer.wait_time=4.5
+	zeppelinTimer.wait_time = 8
+	textbox.queue_text("Doin great, working on getting upgrades")
+	var t = Timer.new()
+	t.set_wait_time(10)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	upgradeScreen()
+	updateCartLabels()
+	
+func score50Sequence():
+	trainControl.cart3.setEnabled(true)
+	textbox.queue_text("Corporate got you another cart")
+	textbox.queue_text("Even threw in an upgrade")
+	var t = Timer.new()
+	t.set_wait_time(2)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	upgradeScreen()
+	updateCartLabels()
+	zeppelinTimer.wait_time = 7
+	
+func score70Sequence():
+	mouseTimer.wait_time = 4
+	zeppelinTimer.wait_time = 5
+	trainControl.cart4.setEnabled(true)
+	updateCartLabels()
+	textbox.queue_text("Nice and cheesy, you have collected 70 points!")
+	
+func score90Sequence():
+	textbox.queue_text("By the way, I'm allergic to lactose")
+	textbox.queue_text("So I'll leave you here")
+	textbox.queue_text("But I will keep the upgrades comming!")
+
+	
+	
 
 func updateCartLabels():
 	var array = $UI/CartsUI.getArrayOfCarts()
@@ -142,6 +211,19 @@ func checkScoreForThreshhold(score):
 	upgradeScreen()
 	if (score == 14):
 		score14Sequence()
+	if (score == 23):
+		score23Sequence()
+	if (score == 27):
+		score27Sequence()
+	if(score==40):
+		score40Sequence()
+	if(score==50):
+		score50Sequence()
+	if(score ==70):
+		score70Sequence()
+	if (score >=100 &&(score%20==1)):
+		upgradeScreen()
+		updateCartLabels()
 
 func upgradeScreen():
 	var upgradeInstance = upgradeScene.instance()
