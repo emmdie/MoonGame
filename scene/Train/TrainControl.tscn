@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TrainControl.gd" type="Script" id=1]
 [ext_resource path="res://scene/Train/locomotive.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/Train/TrainCart.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/soundEffects/SpeedLever.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/soundEffects/Train.wav" type="AudioStream" id=5]
 
 [node name="TrainControl" type="Node2D"]
 script = ExtResource( 1 )
@@ -32,6 +34,15 @@ rotation = -1.43117
 [node name="TrainCart5" parent="RotationalCenter" instance=ExtResource( 3 )]
 position = Vector2( -360, 80 )
 rotation = -1.79769
+
+
+[node name="LeverChanged" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="ChaftiChafti" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Train"
+
 
 [connection signal="damaged" from="RotationalCenter/locomotive" to="." method="_on_TrainCart_cart_damaged"]
 [connection signal="damaged" from="RotationalCenter/locomotive" to="." method="_on_locomotive_damaged"]

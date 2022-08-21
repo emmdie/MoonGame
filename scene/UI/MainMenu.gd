@@ -8,18 +8,22 @@ func _ready():
 	get_tree().paused = false
 
 func _on_ExitButton_pressed():
+	$ButtonClicked.play()
 	get_tree().quit()
 
 
 func _on_PlayButton_pressed():
+	$ButtonClicked.play()
 	get_tree().change_scene("res://scene/Levels/Level.tscn")
 
 
 func _on_AboutButton_pressed():
+	$ButtonClicked.play()
 	var aboutInstance = aboutScene.instance()
 	add_child(aboutInstance)
 
 
 func _on_SettingsButton_pressed():
+	$ButtonClicked.play()
 	var settingsInstance = settingsScene.instance()
 	add_child(settingsInstance)

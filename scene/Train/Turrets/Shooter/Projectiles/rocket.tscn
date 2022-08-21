@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/art/Train/Turrets/rocket.png" type="Texture" id=1]
 [ext_resource path="res://scene/Train/Turrets/Shooter/Projectiles/rocket.gd" type="Script" id=2]
+[ext_resource path="res://assets/soundEffects/FireRocket.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/soundEffects/RatDeath.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 7 )
@@ -41,3 +43,10 @@ gravity = Vector2( 0, 0 )
 initial_velocity = 321.1
 scale_amount = 8.0
 color = Color( 1, 0.760784, 0.235294, 1 )
+
+[node name="ShotSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Rockets"
+
+[node name="MouseDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )

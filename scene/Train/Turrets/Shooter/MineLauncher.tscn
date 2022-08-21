@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scene/Train/Turrets/Shooter/ShooterT1.gd" type="Script" id=1]
 [ext_resource path="res://scene/Train/Turrets/Shooter/Projectiles/Mine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/art/Train/Turrets/minebarrel.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/Train/Turrets/mineLauncher.png" type="Texture" id=4]
+[ext_resource path="res://assets/soundEffects/NoAmmo.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/soundEffects/ReloadingAmmo.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/soundEffects/RatDeath.wav" type="AudioStream" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.9998
@@ -55,3 +58,15 @@ color = Color( 1, 0.760784, 0.235294, 1 )
 position = Vector2( 2, 56 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="OutOfBullets" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "OutOfBullets"
+
+[node name="Reloading" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Reloding"
+
+[node name="RatDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "RatDeath"

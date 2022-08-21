@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scene/Levels/ParallaxBackground.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/space/AssetShare/starsmixed (1).png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scene/Train/locomotive.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scene/Moons/Moon.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/art/UI/GWJ-Full-Logo-noBG.svg" type="Texture" id=9]
+[ext_resource path="res://assets/soundEffects/MenuClick.wav" type="AudioStream" id=10]
 
 [sub_resource type="Shader" id=4]
 code = "/*
@@ -370,6 +371,10 @@ margin_bottom = 1250.0
 custom_fonts/font = SubResource( 6 )
 text = "Quit"
 flat = true
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]

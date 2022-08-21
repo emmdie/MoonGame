@@ -59,6 +59,8 @@ func game_over():
 	get_tree().call_group("mice", "queue_free")
 	$GameOverScreen/GameOverScore.text = "Score: "+str(score)
 	$GameOverScreen.show()
+	$Music.stop()
+	$GameOverSound.play()
 	$UI/ScoreLabel.hide()
 	get_tree().paused = true
 
@@ -87,6 +89,7 @@ func _on_Moon_mouse_hit():
 	else:
 		moon_health -= 10
 		$UI/MoonHealthBar.value = moon_health
+		$MoonHit.play()
 
 
 
@@ -100,6 +103,7 @@ func update_score():
 
 
 func _on_TrainControl_train_damaged():
+	$RatHittingTrain.play()
 	if train_health == 0:
 		game_over()
 	else:
@@ -116,8 +120,8 @@ func beginningSequence():
 	textbox.queue_text("Imagine a life without the moon... No more tides")
 	textbox.queue_text("Try moving it a bit with W/S or arrow buttons a few times")
 	updateCartLabels()
-	mouseTimer.paused = true
-	zeppelinTimer.paused = true
+	#mouseTimer.paused = true
+	#zeppelinTimer.paused = true
 	
 func ratAppearSequence():
 	textbox.queue_text("Oh no, a huge mischief of mice is approaching")

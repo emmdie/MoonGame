@@ -15,4 +15,6 @@ func _ready():
 
 
 func _on_return_pressed():
+	$ButtonClicked.play()
+	yield(get_tree().create_timer(0.15), "timeout")
 	emit_signal("restart")
