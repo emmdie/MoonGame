@@ -203,6 +203,7 @@ func score90Sequence():
 	textbox.queue_text("By the way, I'm allergic to lactose")
 	textbox.queue_text("So I'll leave you here")
 	textbox.queue_text("But I will keep the upgrades comming!")
+	
 
 	
 	
@@ -224,6 +225,9 @@ func checkScoreForThreshhold(score):
 		score50Sequence()
 	if(score ==70):
 		score70Sequence()
+	if(score==90):
+		score90Sequence()
+		
 	if (score >=100 &&(score%20==1)):
 		upgradeScreen()
 		updateCartLabels()
