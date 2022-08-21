@@ -8,11 +8,11 @@ func _ready():
 
 func _process(delta):
 	if (reloading ==true):
-		$ProgressBar.value = 100 * (1-($ReloadTimer.time_left /$ReloadTimer.wait_time+0.00001))
+		$ProgressBar.value = 100 * (1-($ReloadTimer.time_left /($ReloadTimer.wait_time*0.9)))
 	
 func updateLabel():
 	$AmmoLabel.text = str(ammoCurrent) + "/"+ str(ammoMax)
-	$ProgressBar.min_value = 0; $ProgressBar.max_value = ammoMax
+	$ProgressBar.min_value = 0; $ProgressBar.max_value = 100
 	
 func reload(duration):
 	reloading = true

@@ -2,7 +2,7 @@ extends Area2D
 
 signal hit_mouse
 
-var speed = 10
+export var speed = 10
 
 
 func _physics_process(delta):
