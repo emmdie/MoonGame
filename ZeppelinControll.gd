@@ -13,6 +13,8 @@ func _ready():
 func start():
 	$SpawnTimer.start()
 
+func change_spawn_intervall(sec):
+	$SpawnTimer.wait_time = sec
 
 func _on_SpawnTimer_timeout():
 	var zeppellin = zeppelin_scene.instance()
