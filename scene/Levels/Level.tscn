@@ -417,9 +417,7 @@ layer = -1
 stream = ExtResource( 22 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
 stream = ExtResource( 14 )
-autoplay = true
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 
