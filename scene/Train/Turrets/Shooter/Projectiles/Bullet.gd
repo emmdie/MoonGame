@@ -13,8 +13,6 @@ func _ready():
 	$VisibilityNotifier2D.connect("viewport_exited", self, "_on_VisibilityNotifier2D_viewport_exited")
 	connect("body_entered", self, "_on_Bullet_body_entered")
 
-	
-
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("mice"):
 		emit_signal("hit_mouse")
