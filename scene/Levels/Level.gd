@@ -13,6 +13,8 @@ onready var mouseTimer = $MouseTimer
 onready var zeppelinTimer = get_node("ZeppelinControll/SpawnTimer")
 onready var trainControl = get_node("Moon/TrainControl")
 
+const upgradeScene = preload("res://scene/UI/UpgradeScreen.tscn")
+
 export(PackedScene) var mouse_scene
 
 # Called when the node enters the scene tree for the first time.
@@ -126,7 +128,8 @@ func ratAppearSequence():
 	mouseTimer.wait_time = 6
 	
 func score14Sequence():
-	textbox.queue_text("Shoot with your mouse. I'll try to get some upgrades ASAP")
+	textbox.queue_text("Wow, doing great out there!")
+	textbox.queue_text("Gouda job intern, you get to upgrade one of the carts")
 	trainControl.cart2.setEnabled(true)
 	updateCartLabels()
 	mouseTimer = 5
@@ -136,5 +139,15 @@ func updateCartLabels():
 	$Moon/TrainControl.updateAmmoRelations(array)
 
 func checkScoreForThreshhold(score):
+	upgradeScreen()
 	if (score == 14):
 		score14Sequence()
+
+func upgradeScreen():
+	var upgradeInstance = upgradeScene.instance()
+	upgradeInstance.connect("upgrade", self, "applyUpgrade")
+	add_child(upgradeInstance)
+
+func applyUpgrade(cart, upgrade):
+	trainControl.applyUpgrade(cart, upgrade)
+	updateCartLabels()
