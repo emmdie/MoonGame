@@ -10,7 +10,6 @@ onready var textbox = $Textbox
 
 export(PackedScene) var mouse_scene
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	new_game()
