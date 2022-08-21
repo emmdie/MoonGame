@@ -9,6 +9,8 @@ var dmg_to_train = 10
 
 var score 
 onready var textbox = $Textbox
+onready var mouseTimer = $MouseTimer
+onready var zeppelinTimer = get_node("ZeppelinControll/SpawnTimer")
 
 export(PackedScene) var mouse_scene
 
@@ -97,13 +99,15 @@ func _on_GameOverScreen_restart():
 	get_tree().change_scene("res://scene/UI/MainMenu.tscn")
 
 func beginningSequence():
-	textbox.queue_text("1,2....3, Connection stable, Checks passed, train online")
-	textbox.queue_text("Intern! You are the only thing standing between the moon and")
-	textbox.queue_text("the space mice swarm")
-	textbox.queue_text("Change gears with (w/up) and (s/down)")
-	textbox.queue_text("Fire using your mouse, you better don't miss")
-	textbox.queue_text("If either the train or moon dies, that's it")
+	textbox.queue_text("Welcome to your first day, intern! You are the cheesen one!")
+	textbox.queue_text("Our job is to remote control the robot train cheesepiercer")
+	textbox.queue_text("It's humanities strongest weapon against the space mice")
+	textbox.queue_text("Imagine a life without the moon... No more tides")
+	textbox.queue_text("Try moving it a bit with W/S or the arrow buttons")
 	updateCartLabels()
+	mouseTimer.paused = true
+	zeppelinTimer.paused = true
+	
 
 
 func updateCartLabels():

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ThisGameIsOver.wav-4d05433f5a95fed55bed00e8c5f5c523.sample"
+
+[deps]
+
+source_file="res://assets/soundEffects/ThisGameIsOver.wav"
+dest_files=[ "res://.import/ThisGameIsOver.wav-4d05433f5a95fed55bed00e8c5f5c523.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

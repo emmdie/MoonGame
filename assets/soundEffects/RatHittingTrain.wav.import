@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/RatHittingTrain.wav-b41f0928d856ae67546a6b33804eaa8d.sample"
+
+[deps]
+
+source_file="res://assets/soundEffects/RatHittingTrain.wav"
+dest_files=[ "res://.import/RatHittingTrain.wav-b41f0928d856ae67546a6b33804eaa8d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
