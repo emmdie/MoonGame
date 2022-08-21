@@ -212,7 +212,6 @@ func updateCartLabels():
 	$Moon/TrainControl.updateAmmoRelations(array)
 
 func checkScoreForThreshhold(score):
-	upgradeScreen()
 	if (score == 14):
 		score14Sequence()
 	if (score == 23):
