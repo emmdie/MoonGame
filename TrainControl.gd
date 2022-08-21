@@ -72,6 +72,35 @@ func updateCurrentSpeed(delta):
 	else:
 		return (currentSpeed-2*delta*(currentSpeed-targetSpeed))
 
+func applyUpgrade(cart, upgrade):
+	print ("TrainControl: "+str(cart) + "  "+ str(upgrade))
+	if(cart == 1):
+		cart = cart1
+		print("changed cart")
+	elif(cart == 2):
+		cart = cart2
+		print("changed cart")
+	elif(cart == 3):
+		cart = cart3
+		print("changed cart")
+	elif(cart == 4):
+		cart = cart4
+		print("changed cart")
+	elif(cart == 5):
+		cart = cart5
+		print("changed cart")
+	if(upgrade==1):
+		cart.setTurret(load("res://scene/Train/Turrets/Shooter/rocketlauncherT1.tscn"))
+	if(upgrade==2):
+		cart.setTurret(load("res://scene/Train/Turrets/Shooter/MineLauncher.tscn"))
+	if(upgrade==3):
+		cart.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	else:
+		cart.turret.maxAmmo = cart.turret.maxAmmo + 2
+	cart.select(cart.selected)
+	cart.setEnabled(cart.enabled)
+
+	
 func _on_TrainCart_weapon_hit_mouse():
 	emit_signal("TrainCart_weapon_shot_mouse")
 
