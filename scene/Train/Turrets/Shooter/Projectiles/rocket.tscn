@@ -27,7 +27,7 @@ position = Vector2( 30, 0 )
 [node name="Gunfire" type="CPUParticles2D" parent="."]
 position = Vector2( -15, -2 )
 rotation = 2.98277
-amount = 20
+amount = 15
 lifetime = 0.3
 preprocess = 15.0
 speed_scale = 2.0

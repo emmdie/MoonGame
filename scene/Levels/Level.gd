@@ -80,6 +80,7 @@ func _on_TrainControl_TrainCart_weapon_shot_mouse():
 
 func update_score():
 	$UI/ScoreLabel.text = str(score)
+	checkScoreForThreshhold(score)
 
 
 func _on_TrainControl_train_damaged():
@@ -101,6 +102,11 @@ func beginningSequence():
 	textbox.queue_text("If either the train or moon dies, that's it")
 	updateCartLabels()
 
+
 func updateCartLabels():
 	var array = $UI/CartsUI.getArrayOfCarts()
 	$Moon/TrainControl.updateAmmoRelations(array)
+
+func checkScoreForThreshhold(score):
+	if (score > 14):
+		pass
