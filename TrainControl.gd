@@ -11,7 +11,6 @@ signal gearChanged(gear)
 func _process(delta):
 	currentSpeed = updateCurrentSpeed(delta)
 	$RotationalCenter.rotation += currentSpeed * delta
-	$ChaftiChafti.pitch_scale = gear * 0.4
 	if (Input.is_action_just_pressed("speed_up")):
 		gearUp()
 	if(Input.is_action_just_pressed("speed_down")):
@@ -50,7 +49,6 @@ func _ready():
 	cart5.setEnabled(false)
 	deselectAllCarts()
 	cart1.select(true)
-	$ChaftiChafti.play()
 
 #takes -1 or 1 as parameter
 func gearDown():
