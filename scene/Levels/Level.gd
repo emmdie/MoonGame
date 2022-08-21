@@ -15,6 +15,7 @@ func _ready():
 	new_game()
 	randomize()
 	$GravityField.set_gravity_center($Moon.position)
+	$ZeppelinControll.set("target_position", $ZeppelinControll.position - $Moon.position)
 	beginningSequence()
 
 #starts the 

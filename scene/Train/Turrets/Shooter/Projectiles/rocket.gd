@@ -3,6 +3,9 @@ export onready var steerForce =0.5
 var pointer 
 var velocity
 
+func _ready():
+		connect("body_entered", self, "_on_Bullet_body_entered")
+
 func _physics_process(delta):
 	pointer = get_global_mouse_position()
 	velocity = ($Position2D.global_position -  $Position2D2.global_position) * delta * speed
