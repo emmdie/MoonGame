@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/font/SpaceCowboy-6RXg.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GameOverScreen.gd" type="Script" id=2]
+[ext_resource path="res://assets/soundEffects/MenuClick.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=7]
 size = 150
@@ -45,5 +46,9 @@ margin_bottom = 1273.0
 custom_fonts/font = SubResource( 8 )
 text = "Return"
 flat = true
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 3 )
 
 [connection signal="pressed" from="return" to="." method="_on_return_pressed"]

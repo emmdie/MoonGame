@@ -44,8 +44,11 @@ func shoot():
 		ammo =ammo- 1
 		if (ammo == 0&&!reloading):
 			reload()
-			
+	else:
+		$OutOfBullets.play()
+
 func _on_Bullet_hit_mouse():
+	$RatDeath.play()
 	emit_signal("shot_mouse")
 
 func _on_Hitbox_body_entered(body):
@@ -58,6 +61,7 @@ func select(boolean):
 	selected = boolean
 
 func reload():
+	$Reloading.play()
 	reloading = true
 	var t = Timer.new()
 	t.set_wait_time(3)
