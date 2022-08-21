@@ -290,8 +290,18 @@ position = Vector2( 481, 388 )
 scale = Vector2( 1.12422, 1.015 )
 texture = ExtResource( 5 )
 
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer/Sprite"]
+show_behind_parent = true
+margin_left = 16.9006
+margin_top = 80.7882
+margin_right = 1096.9
+margin_bottom = 902.788
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+
 [node name="Moon" parent="ParallaxBackground/ParallaxLayer/Sprite" instance=ExtResource( 8 )]
 position = Vector2( 200, 100 )
+z_index = -1
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -360,15 +370,6 @@ margin_bottom = 1250.0
 custom_fonts/font = SubResource( 6 )
 text = "Quit"
 flat = true
-
-[node name="TextureRect" type="TextureRect" parent="."]
-show_behind_parent = true
-margin_left = 500.0
-margin_top = 470.0
-margin_right = 1580.0
-margin_bottom = 1292.0
-rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 9 )
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
