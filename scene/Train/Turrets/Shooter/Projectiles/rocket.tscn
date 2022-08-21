@@ -41,6 +41,3 @@ gravity = Vector2( 0, 0 )
 initial_velocity = 321.1
 scale_amount = 8.0
 color = Color( 1, 0.760784, 0.235294, 1 )
-
-[connection signal="body_entered" from="." to="." method="_on_Rocket_body_entered"]
-[connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]

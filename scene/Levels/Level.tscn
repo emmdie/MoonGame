@@ -312,7 +312,7 @@ position = Vector2( 276, 275 )
 rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 
 [node name="ZeppelinControll" parent="." instance=ExtResource( 21 )]
 position = Vector2( 600, 800 )

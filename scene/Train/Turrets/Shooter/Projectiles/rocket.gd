@@ -4,7 +4,7 @@ var pointer
 var velocity
 
 func _ready():
-		connect("body_entered", self, "_on_Bullet_body_entered")
+	pass
 
 func _physics_process(delta):
 	pointer = get_global_mouse_position()
