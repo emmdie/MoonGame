@@ -35,12 +35,14 @@ rotation = -1.43117
 position = Vector2( -360, 80 )
 rotation = -1.79769
 
+
 [node name="LeverChanged" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
 [node name="ChaftiChafti" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 bus = "Train"
+
 
 [connection signal="damaged" from="RotationalCenter/locomotive" to="." method="_on_TrainCart_cart_damaged"]
 [connection signal="damaged" from="RotationalCenter/locomotive" to="." method="_on_locomotive_damaged"]

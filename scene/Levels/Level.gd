@@ -11,6 +11,9 @@ var score
 onready var textbox = $Textbox
 onready var mouseTimer = $MouseTimer
 onready var zeppelinTimer = get_node("ZeppelinControll/SpawnTimer")
+onready var trainControl = get_node("Moon/TrainControl")
+
+const upgradeScene = preload("res://scene/UI/UpgradeScreen.tscn")
 
 export(PackedScene) var mouse_scene
 
@@ -21,6 +24,14 @@ func _ready():
 	$GravityField.set_gravity_center($Moon.position)
 	$ZeppelinControll.set("target_position", $ZeppelinControll.position - $Moon.position)
 	beginningSequence()
+	var t = Timer.new()
+	t.set_wait_time(10)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	ratAppearSequence()
+	
 
 #starts the 
 func new_game():
@@ -107,17 +118,40 @@ func beginningSequence():
 	textbox.queue_text("Our job is to remote control the robot train cheesepiercer")
 	textbox.queue_text("It's humanities strongest weapon against the space mice")
 	textbox.queue_text("Imagine a life without the moon... No more tides")
-	textbox.queue_text("Try moving it a bit with W/S or the arrow buttons")
+	textbox.queue_text("Try moving it a bit with W/S or arrow buttons a few times")
 	updateCartLabels()
 	#mouseTimer.paused = true
 	#zeppelinTimer.paused = true
 	
-
+func ratAppearSequence():
+	textbox.queue_text("Oh no, a huge mischief of mice is approaching")
+	textbox.queue_text("Guess you gauda learn on the job")
+	textbox.queue_text("You ought to stop them! I Swiss you best of luck intern")
+	textbox.queue_text("Shoot with your mouse. I'll try to get some upgrades ASAP")
+	mouseTimer.paused = false
+	mouseTimer.wait_time = 6
+	
+func score14Sequence():
+	textbox.queue_text("Wow, doing great out there!")
+	textbox.queue_text("Gouda job intern, you get to upgrade one of the carts")
+	trainControl.cart2.setEnabled(true)
+	updateCartLabels()
+	mouseTimer = 5
 
 func updateCartLabels():
 	var array = $UI/CartsUI.getArrayOfCarts()
 	$Moon/TrainControl.updateAmmoRelations(array)
 
 func checkScoreForThreshhold(score):
-	if (score > 14):
-		pass
+	upgradeScreen()
+	if (score == 14):
+		score14Sequence()
+
+func upgradeScreen():
+	var upgradeInstance = upgradeScene.instance()
+	upgradeInstance.connect("upgrade", self, "applyUpgrade")
+	add_child(upgradeInstance)
+
+func applyUpgrade(cart, upgrade):
+	trainControl.applyUpgrade(cart, upgrade)
+	updateCartLabels()

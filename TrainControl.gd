@@ -39,13 +39,13 @@ func _process(delta):
 		
 func _ready():
 	cart1.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
-	cart2.setTurret(load("res://scene/Train/Turrets/Shooter/rocketlauncherT1.tscn"))
-	cart3.setTurret(load("res://scene/Train/Turrets/Shooter/MineLauncher.tscn"))
+	cart2.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	cart3.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
 	cart4.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
 	cart5.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
 	cart1.setEnabled(true)
-	cart2.setEnabled(true)
-	cart3.setEnabled(true)
+	cart2.setEnabled(false)
+	cart3.setEnabled(false)
 	cart4.setEnabled(false)
 	cart5.setEnabled(false)
 	deselectAllCarts()
@@ -74,6 +74,35 @@ func updateCurrentSpeed(delta):
 	else:
 		return (currentSpeed-2*delta*(currentSpeed-targetSpeed))
 
+func applyUpgrade(cart, upgrade):
+	print ("TrainControl: "+str(cart) + "  "+ str(upgrade))
+	if(cart == 1):
+		cart = cart1
+		print("changed cart")
+	elif(cart == 2):
+		cart = cart2
+		print("changed cart")
+	elif(cart == 3):
+		cart = cart3
+		print("changed cart")
+	elif(cart == 4):
+		cart = cart4
+		print("changed cart")
+	elif(cart == 5):
+		cart = cart5
+		print("changed cart")
+	if(upgrade==1):
+		cart.setTurret(load("res://scene/Train/Turrets/Shooter/rocketlauncherT1.tscn"))
+	if(upgrade==2):
+		cart.setTurret(load("res://scene/Train/Turrets/Shooter/MineLauncher.tscn"))
+	if(upgrade==3):
+		cart.setTurret(load("res://scene/Train/Turrets/Shooter/ShooterT1.tscn"))
+	else:
+		cart.turret.maxAmmo = cart.turret.maxAmmo + 2
+	cart.select(cart.selected)
+	cart.setEnabled(cart.enabled)
+
+	
 func _on_TrainCart_weapon_hit_mouse():
 	emit_signal("TrainCart_weapon_shot_mouse")
 
