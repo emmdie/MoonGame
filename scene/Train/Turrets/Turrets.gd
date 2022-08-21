@@ -25,13 +25,15 @@ func setEnabled(boolean):
 	$Barrel.visible = boolean
 	$Base.visible = boolean
 	get_node("Hitbox/HitboxArea").disabled = !boolean
+	if (label != null):
+		label.visible = boolean
 	enabled = boolean
 	
 func turn():
 	get_node("Barrel").look_at(get_global_mouse_position())
 
 func shoot():
-	if (ammo >= 1):
+	if (!reloading):
 		var b = Bullet.instance()
 		b.global_position = get_node("Barrel/Muzzle").global_position
 		b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
@@ -57,11 +59,11 @@ func select(boolean):
 
 func reload():
 	reloading = true
-	label.reload(reloadTime)
 	var t = Timer.new()
 	t.set_wait_time(3)
 	t.set_one_shot(true)
 	self.add_child(t)
+	label.reload(reloadTime+0.7)
 	t.start()
 	yield(t, "timeout")
 	t.queue_free()
@@ -73,3 +75,6 @@ func setLabel(newLabel):
 	label = newLabel
 	newLabel.ammoCurrent = ammo
 	newLabel.ammoMax = maxAmmo
+	newLabel.updateLabel()
+	if enabled == false:
+		label.visible = false
