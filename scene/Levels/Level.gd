@@ -11,6 +11,7 @@ var score
 onready var textbox = $Textbox
 onready var mouseTimer = $MouseTimer
 onready var zeppelinTimer = get_node("ZeppelinControll/SpawnTimer")
+onready var trainControl = get_node("Moon/TrainControl")
 
 export(PackedScene) var mouse_scene
 
@@ -120,14 +121,20 @@ func ratAppearSequence():
 	textbox.queue_text("Oh no, a huge mischief of mice is approaching")
 	textbox.queue_text("Guess you gauda learn on the job")
 	textbox.queue_text("You ought to stop them! I Swiss you best of luck intern")
-	textbox.queue_text("Shoot with your mouse. I'll get some upgrades ASAP")
+	textbox.queue_text("Shoot with your mouse. I'll try to get some upgrades ASAP")
+	mouseTimer.paused = false
+	mouseTimer.wait_time = 6
 	
-	
+func score14Sequence():
+	textbox.queue_text("Shoot with your mouse. I'll try to get some upgrades ASAP")
+	trainControl.cart2.setEnabled(true)
+	updateCartLabels()
+	mouseTimer = 5
 
 func updateCartLabels():
 	var array = $UI/CartsUI.getArrayOfCarts()
 	$Moon/TrainControl.updateAmmoRelations(array)
 
 func checkScoreForThreshhold(score):
-	if (score > 14):
-		pass
+	if (score == 14):
+		score14Sequence()
