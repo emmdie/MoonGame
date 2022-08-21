@@ -311,7 +311,7 @@ position = Vector2( 276, 275 )
 rotate = false
 
 [node name="MouseTimer" type="Timer" parent="."]
-wait_time = 4096.0
+wait_time = 3.0
 
 [node name="UI" type="Node2D" parent="."]
 z_index = 2
