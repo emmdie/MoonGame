@@ -15,11 +15,11 @@ export(PackedScene) var mouse_scene
 
 func _ready():
 	hide()
-	$CollisionShape2D.set_deferred(\"disabled\", true)
+	$CollisionShape2D.disabled = true
 	
 	yield(get_tree().create_timer(rand_range(0.0, 30.0)), \"timeout\")
 	
-	$CollisionShape2D.set_deferred(\"disabled\", false)
+	$CollisionShape2D.disabled = false
 	show()
 	$InitTime.start()
 
