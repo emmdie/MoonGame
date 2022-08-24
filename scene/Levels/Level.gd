@@ -119,7 +119,7 @@ func beginningSequence():
 	textbox.queue_text("Our job is to remote control the robot train cheesepiercer")
 	textbox.queue_text("It's humanities strongest weapon against the space mice")
 	textbox.queue_text("Imagine a life without the moon... No more tides")
-	textbox.queue_text("Try moving it a bit with W/S or arrow buttons a few times")
+	textbox.queue_text("Try changing gears with W/S or arrow buttons a few times")
 	updateCartLabels()
 	mouseTimer.paused = true
 	zeppelinTimer.paused = true
@@ -130,7 +130,7 @@ func ratAppearSequence():
 	textbox.queue_text("You ought to stop them! I Swiss you best of luck intern")
 	textbox.queue_text("Shoot with your mouse. I'll try to get some upgrades ASAP")
 	mouseTimer.paused = false
-	mouseTimer.wait_time = 6
+	mouseTimer.wait_time = 5.5
 	
 func score14Sequence():
 	textbox.queue_text("Wow, doing great out there!")
@@ -145,7 +145,7 @@ func score14Sequence():
 	yield(t, "timeout")
 	upgradeScreen()
 	updateCartLabels()
-	mouseTimer.wait_time = 5.5
+	mouseTimer.wait_time -= 0.5
 	
 func score23Sequence():
 	textbox.queue_text("Just got corporate to give you another cart!")
@@ -156,7 +156,7 @@ func score27Sequence():
 	textbox.queue_text("Damnit intern, we have spotted zeppelins!")
 	textbox.queue_text("Take an extra upgrade to fend them off!")
 	zeppelinTimer.paused = false
-	zeppelinTimer.wait_time = 10
+	zeppelinTimer.wait_time = 13
 	var t = Timer.new()
 	t.set_wait_time(1)
 	t.set_one_shot(true)
@@ -167,8 +167,7 @@ func score27Sequence():
 	updateCartLabels()
 	
 func score40Sequence():
-	mouseTimer.wait_time=4.5
-	zeppelinTimer.wait_time = 8
+	zeppelinTimer.wait_time -=3
 	textbox.queue_text("Doin great, working on getting upgrades")
 	var t = Timer.new()
 	t.set_wait_time(10)
@@ -191,18 +190,17 @@ func score50Sequence():
 	yield(t, "timeout")
 	upgradeScreen()
 	updateCartLabels()
-	zeppelinTimer.wait_time = 7
+	mouseTimer.wait_time -= 0.5
 	
 func score70Sequence():
-	mouseTimer.wait_time = 4
-	zeppelinTimer.wait_time = 5
+	zeppelinTimer.wait_time -= 2
 	trainControl.cart4.setEnabled(true)
 	updateCartLabels()
 	textbox.queue_text("Nice and cheesy, you have collected 70 points!")
 	
 func score90Sequence():
 	textbox.queue_text("By the way, I'm allergic to lactose")
-	textbox.queue_text("So I'll leave you here")
+	textbox.queue_text("So I'll leave you here with a last cart")
 	textbox.queue_text("But I will keep the upgrades comming!")
 	
 
@@ -232,6 +230,8 @@ func checkScoreForThreshhold(score):
 	if (score >=100 &&(score%20==1)):
 		upgradeScreen()
 		updateCartLabels()
+		mouseTimer.wait_time = mouseTimer.wait_time *0.9
+		zeppelinTimer.wait_time = mouseTimer.wait_time *0.9
 
 func upgradeScreen():
 	var upgradeInstance = upgradeScene.instance()
