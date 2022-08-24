@@ -1,5 +1,5 @@
 extends "res://scene/Train/Turrets/Shooter/Projectiles/Bullet.gd"
-export onready var steerForce = 0.5
+export onready var steerForce = 0.35
 var pointer 
 var velocity
 
