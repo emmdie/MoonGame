@@ -6,7 +6,7 @@ var reloading = false
 func _ready():
 	$ProgressBar.visible = false
 
-func _process(delta):
+func _process(_delta):
 	if (reloading ==true):
 		$ProgressBar.value = 100 * (1-($ReloadTimer.time_left /($ReloadTimer.wait_time*0.9)))
 	

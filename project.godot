@@ -12,7 +12,6 @@ config_version=4
 
 config/name="MoonExpress"
 run/main_scene="res://scene/UI/MainMenu.tscn"
-config/icon="res://icon.png"
 
 [display]
 

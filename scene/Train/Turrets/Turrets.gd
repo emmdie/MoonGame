@@ -37,7 +37,7 @@ func shoot():
 		var b = Bullet.instance()
 		b.global_position = get_node("Barrel/Muzzle").global_position
 		b.global_rotation =  get_node("Barrel/Muzzle").global_rotation
-		b.connect("hit_mouse", self, "_on_Bullet_hit_mouse")
+		b.connect("hit_mouse", self, "_on_Bullet_hit_mouse", [], CONNECT_DEFERRED)
 		get_node('/root').add_child(b)
 		gunfire.emitting = true
 		label.shoot()

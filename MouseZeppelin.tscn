@@ -13,15 +13,9 @@ var target_position = Vector2(100.0 , 100.0)
 export(PackedScene) var mouse_scene
 
 
+
 func _ready():
-	hide()
-	$CollisionShape2D.disabled = true
-	
-	yield(get_tree().create_timer(rand_range(0.0, 30.0)), \"timeout\")
-	
-	$CollisionShape2D.disabled = false
-	show()
-	$InitTime.start()
+	pass
 
 func _process(delta):
 	rotation += angular_speed * delta
@@ -36,6 +30,7 @@ func _on_InitTime_timeout():
 	$MiceSpawnRate.start()
 
 func _on_MiceSpawnRate_timeout():
+	print(\"zepelin owner pre add: \" +get_owner().get_name() + \" | is inside tree: \" + str(is_inside_tree()))
 	var mouse = mouse_scene.instance()
 	
 	mouse.position.x = mouse.position.x + 120
@@ -46,6 +41,7 @@ func _on_MiceSpawnRate_timeout():
 	mouse.linear_velocity = velocity.rotated(mouse.rotation)
 	
 	add_child(mouse)
+	print(\"zepelin owner post add: \" +get_owner().get_name()+ \" | is inside tree: \" + str(is_inside_tree()))
 "
 
 [sub_resource type="CapsuleShape2D" id=2]

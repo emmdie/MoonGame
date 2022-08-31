@@ -31,11 +31,10 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	ratAppearSequence()
-	
 
-#starts the 
+
 func new_game():
-	$Music.play()
+	$Music.play(0)
 	$GameOverScreen.hide()
 	$UI/ScoreLabel.show()
 	
